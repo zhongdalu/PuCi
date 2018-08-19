@@ -36,6 +36,7 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
 
      onLoad () {
+       
         var collision_manager=cc.director.getCollisionManager();
         collision_manager.enabled=true;
      },
@@ -47,7 +48,8 @@ cc.Class({
     OnClick:function(event,customEventData)
     {
         console.log("evnet="+customEventData);   
-        this.anim.play('gun'); 
+        this.anim.play('gun');
+        this.anim.playAdditive('run');
         //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
         var PrefabUrl="bullet";
         cc.loader.loadRes(PrefabUrl,cc.Prefab, function(errorMessage,loadedResource){
