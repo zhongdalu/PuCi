@@ -399,7 +399,7 @@
     "_position": {
       "__type__": "cc.Vec2",
       "x": 3,
-      "y": -290
+      "y": -277
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -2060,10 +2060,15 @@
       "__id__": 22
     },
     "_enabled": true,
-    "_defaultClip": null,
+    "_defaultClip": {
+      "__uuid__": "d05f7ebf-4d43-4635-96ef-7bdf830301d8"
+    },
     "_clips": [
       {
         "__uuid__": "1ff46e7c-0eee-4a24-8666-227461328a70"
+      },
+      {
+        "__uuid__": "d05f7ebf-4d43-4635-96ef-7bdf830301d8"
       }
     ],
     "playOnLoad": true

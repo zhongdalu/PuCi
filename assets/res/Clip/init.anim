@@ -1,0 +1,189 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "init",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 0.4166666666666667,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": "2",
+  "curveData": {
+    "paths": {
+      "shenti/shenti_L": {
+        "props": {
+          "scale": []
+        }
+      },
+      "shenti/shenti_R": {
+        "props": {
+          "scale": []
+        }
+      },
+      "shenti/xiaoji_0005_bozi": {
+        "props": {
+          "position": []
+        }
+      },
+      "shenti/datui_R": {
+        "props": {
+          "position": [],
+          "scale": []
+        }
+      },
+      "shenti/datui_L": {
+        "props": {
+          "position": [],
+          "scale": []
+        }
+      },
+      "shenti": {
+        "props": {
+          "scale": [
+            {
+              "frame": 0,
+              "value": {
+                "__type__": "cc.Vec2",
+                "x": 1,
+                "y": 1
+              }
+            },
+            {
+              "frame": 0.16666666666666666,
+              "value": {
+                "__type__": "cc.Vec2",
+                "x": 1,
+                "y": 0.96
+              }
+            },
+            {
+              "frame": 0.4166666666666667,
+              "value": {
+                "__type__": "cc.Vec2",
+                "x": 1,
+                "y": 1
+              }
+            }
+          ],
+          "position": [
+            {
+              "frame": 0,
+              "value": [
+                0,
+                0
+              ]
+            },
+            {
+              "frame": 0.16666666666666666,
+              "value": [
+                0,
+                -4.5
+              ]
+            },
+            {
+              "frame": 0.4166666666666667,
+              "value": [
+                0,
+                0
+              ]
+            }
+          ]
+        }
+      },
+      "chibang": {
+        "props": {
+          "position": [
+            {
+              "frame": 0,
+              "value": [
+                0,
+                0
+              ]
+            },
+            {
+              "frame": 0.1,
+              "value": [
+                0,
+                1.1
+              ]
+            },
+            {
+              "frame": 0.21666666666666667,
+              "value": [
+                0,
+                -5.7
+              ]
+            },
+            {
+              "frame": 0.4166666666666667,
+              "value": [
+                0,
+                0
+              ]
+            }
+          ]
+        }
+      },
+      "chibang/chi_R": {
+        "props": {
+          "rotation": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 0.03333333333333333,
+              "value": -8
+            },
+            {
+              "frame": 0.16666666666666666,
+              "value": -14
+            },
+            {
+              "frame": 0.3,
+              "value": 8
+            },
+            {
+              "frame": 0.4,
+              "value": 11
+            },
+            {
+              "frame": 0.4166666666666667,
+              "value": 0
+            }
+          ]
+        }
+      },
+      "chibang/chi_L": {
+        "props": {
+          "rotation": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 0.03333333333333333,
+              "value": 5
+            },
+            {
+              "frame": 0.16666666666666666,
+              "value": 15
+            },
+            {
+              "frame": 0.3,
+              "value": -13
+            },
+            {
+              "frame": 0.4,
+              "value": -14
+            },
+            {
+              "frame": 0.4166666666666667,
+              "value": 0
+            }
+          ]
+        }
+      }
+    }
+  },
+  "events": []
+}
