@@ -26,6 +26,10 @@ cc.Class({
         //         this._bar = value;
         //     }
         // },
+        anim:{
+            default:null,
+            type:cc.Animation
+        }
     
     },
 
@@ -42,7 +46,8 @@ cc.Class({
 
     OnClick:function(event,customEventData)
     {
-        console.log("evnet="+customEventData);    
+        console.log("evnet="+customEventData);   
+        this.anim.play('gun'); 
         //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
         var PrefabUrl="bullet";
         cc.loader.loadRes(PrefabUrl,cc.Prefab, function(errorMessage,loadedResource){
