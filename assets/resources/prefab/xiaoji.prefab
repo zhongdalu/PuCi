@@ -54,7 +54,7 @@
     "_position": {
       "__type__": "cc.Vec2",
       "x": 0,
-      "y": -134
+      "y": -379
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -1373,7 +1373,7 @@
     },
     "_children": [],
     "_tag": -1,
-    "_active": false,
+    "_active": true,
     "_components": [
       {
         "__id__": 44
@@ -1409,7 +1409,7 @@
     "_position": {
       "__type__": "cc.Vec2",
       "x": 0,
-      "y": 28.2
+      "y": 415.6
     },
     "_skewX": 0,
     "_skewY": 0,
