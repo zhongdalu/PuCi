@@ -71,6 +71,9 @@ cc.Class({
         }
         if(this.count==0){
             this.node.destroy();
+            cc.director.GlobalEvent.emit('score_add', {
+                msg: 1,
+              });
         }else{
             var scale=1+(this.count-1)/10;
             this.node.setScale(scale, scale);
@@ -80,8 +83,6 @@ cc.Class({
     onDestroy()
     {
         console.log("enemy estroy========");
-          cc.director.GlobalEvent.emit('score_add', {
-            msg: 1,
-          });
+       
     }
 });

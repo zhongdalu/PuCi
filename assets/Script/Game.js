@@ -105,5 +105,6 @@ cc.Class({
         this.enemyList=[];
         this.scoreNum=0;
         this.scoreTxt.string=this.scoreNum;
+        console.log('this.scoreTxt==========='+this.scoreNum);
     }
 });
