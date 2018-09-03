@@ -3,7 +3,7 @@
   "_name": "run",
   "_objFlags": 0,
   "_rawFiles": null,
-  "_duration": 1.45,
+  "_duration": 1.3333333333333333,
   "sample": 60,
   "speed": 1,
   "wrapMode": "2",
@@ -192,7 +192,7 @@
               "frame": 0.21666666666666667,
               "value": [
                 -45.2,
-                -81.5
+                -75.4
               ]
             },
             {
@@ -210,7 +210,7 @@
             },
             {
               "frame": 0.21666666666666667,
-              "value": 1.2
+              "value": 1.14
             },
             {
               "frame": 0.4,
@@ -241,7 +241,7 @@
               "frame": 0.8666666666666667,
               "value": [
                 44.4,
-                -81.5
+                -75.8
               ]
             },
             {
@@ -266,7 +266,7 @@
               "value": {
                 "__type__": "cc.Vec2",
                 "x": 1,
-                "y": 1.2
+                "y": 1.14
               }
             },
             {
@@ -310,11 +310,25 @@
               "frame": 0.3333333333333333,
               "value": [
                 37.2,
-                11.2
+                15.3
               ]
             },
             {
               "frame": 0.6666666666666666,
+              "value": [
+                26.2,
+                11.2
+              ]
+            },
+            {
+              "frame": 1,
+              "value": [
+                29.8,
+                10.7
+              ]
+            },
+            {
+              "frame": 1.3333333333333333,
               "value": [
                 26.2,
                 11.2
@@ -328,14 +342,22 @@
             },
             {
               "frame": 0.2,
-              "value": -6
+              "value": -17
             },
             {
               "frame": 0.4666666666666667,
-              "value": 12
+              "value": 13
             },
             {
               "frame": 0.6666666666666666,
+              "value": 0
+            },
+            {
+              "frame": 1,
+              "value": 8
+            },
+            {
+              "frame": 1.3333333333333333,
               "value": 0
             }
           ]
@@ -344,6 +366,20 @@
       "chibang/chi_L": {
         "props": {
           "position": [
+            {
+              "frame": 0,
+              "value": [
+                -26.2,
+                11.2
+              ]
+            },
+            {
+              "frame": 0.3333333333333333,
+              "value": [
+                -30.8,
+                8.7
+              ]
+            },
             {
               "frame": 0.6666666666666666,
               "value": [
@@ -368,6 +404,14 @@
           ],
           "rotation": [
             {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 0.3333333333333333,
+              "value": -17
+            },
+            {
               "frame": 0.6666666666666666,
               "value": 0
             },
@@ -390,12 +434,271 @@
         "props": {
           "scaleY": [
             {
-              "frame": 1.1166666666666667,
+              "frame": 1,
               "value": 0.93
             },
             {
-              "frame": 1.45,
+              "frame": 1.3333333333333333,
               "value": 1
+            }
+          ]
+        }
+      },
+      "shenti/xiaoji_0005_bozi/neck1": {
+        "props": {
+          "position": [
+            {
+              "frame": 0,
+              "value": [
+                -0.7,
+                -52.8
+              ]
+            },
+            {
+              "frame": 0.3333333333333333,
+              "value": [
+                -0.7,
+                -56.1
+              ]
+            },
+            {
+              "frame": 0.6666666666666666,
+              "value": [
+                -0.7,
+                -52.8
+              ]
+            },
+            {
+              "frame": 1,
+              "value": [
+                -0.7,
+                -56.1
+              ]
+            },
+            {
+              "frame": 1.3333333333333333,
+              "value": [
+                -0.7,
+                -52.8
+              ]
+            }
+          ],
+          "rotation": [
+            {
+              "frame": 0,
+              "value": 4
+            },
+            {
+              "frame": 0.3333333333333333,
+              "value": 13
+            },
+            {
+              "frame": 1,
+              "value": -13
+            },
+            {
+              "frame": 1.3333333333333333,
+              "value": 4
+            }
+          ]
+        }
+      },
+      "shenti/xiaoji_0005_bozi/neck1/neck2": {
+        "props": {
+          "rotation": [
+            {
+              "frame": 0,
+              "value": -5
+            },
+            {
+              "frame": 0.3333333333333333,
+              "value": -15
+            },
+            {
+              "frame": 1,
+              "value": 15
+            },
+            {
+              "frame": 1.3333333333333333,
+              "value": -5
+            }
+          ]
+        }
+      },
+      "shenti/xiaoji_0005_bozi/neck1/neck2/neck3": {
+        "props": {
+          "rotation": [
+            {
+              "frame": 0,
+              "value": -5
+            },
+            {
+              "frame": 0.3333333333333333,
+              "value": -9
+            },
+            {
+              "frame": 1,
+              "value": 9
+            },
+            {
+              "frame": 1.3333333333333333,
+              "value": -5
+            }
+          ]
+        }
+      },
+      "shenti/xiaoji_0005_bozi/neck1/neck2/neck3/head": {
+        "props": {
+          "rotation": [
+            {
+              "frame": 0,
+              "value": -5
+            },
+            {
+              "frame": 0.3333333333333333,
+              "value": -4
+            },
+            {
+              "frame": 1,
+              "value": 4
+            },
+            {
+              "frame": 1.3333333333333333,
+              "value": -5
+            }
+          ]
+        }
+      },
+      "shenti/xiaoji_0005_bozi/neck1/neck2/neck3/head/eye_L/Benevolence": {
+        "props": {
+          "position": [
+            {
+              "frame": 0,
+              "value": [
+                3.1,
+                -1
+              ]
+            },
+            {
+              "frame": 0.3333333333333333,
+              "value": [
+                5,
+                3
+              ]
+            },
+            {
+              "frame": 0.6666666666666666,
+              "value": [
+                2.3,
+                -0.3
+              ]
+            },
+            {
+              "frame": 1,
+              "value": [
+                -4.8,
+                6.1
+              ]
+            },
+            {
+              "frame": 1.3333333333333333,
+              "value": [
+                3.1,
+                0.5
+              ]
+            }
+          ]
+        }
+      },
+      "shenti/xiaoji_0005_bozi/neck1/neck2/neck3/head/eye_R/Benevolence": {
+        "props": {
+          "position": [
+            {
+              "frame": 0,
+              "value": [
+                3.1,
+                0.5
+              ]
+            },
+            {
+              "frame": 0.3333333333333333,
+              "value": [
+                3.8,
+                5
+              ]
+            },
+            {
+              "frame": 0.6666666666666666,
+              "value": [
+                -0.1,
+                1.1
+              ]
+            },
+            {
+              "frame": 1,
+              "value": [
+                -4.4,
+                5
+              ]
+            },
+            {
+              "frame": 1.3333333333333333,
+              "value": [
+                3.1,
+                0.5
+              ]
+            }
+          ]
+        }
+      },
+      "shenti/xiaoji_0005_bozi/neck1/neck2/neck3/head/eyebrow_L": {
+        "props": {
+          "rotation": [
+            {
+              "frame": 0,
+              "value": -6
+            },
+            {
+              "frame": 0.3333333333333333,
+              "value": 15
+            },
+            {
+              "frame": 0.6666666666666666,
+              "value": -6
+            },
+            {
+              "frame": 1,
+              "value": 15
+            },
+            {
+              "frame": 1.3333333333333333,
+              "value": -6
+            }
+          ]
+        }
+      },
+      "shenti/xiaoji_0005_bozi/neck1/neck2/neck3/head/eyebrow_R": {
+        "props": {
+          "rotation": [
+            {
+              "frame": 0,
+              "value": 6
+            },
+            {
+              "frame": 0.3333333333333333,
+              "value": -15
+            },
+            {
+              "frame": 0.6666666666666666,
+              "value": 6
+            },
+            {
+              "frame": 1,
+              "value": -15
+            },
+            {
+              "frame": 1.3333333333333333,
+              "value": 6
             }
           ]
         }

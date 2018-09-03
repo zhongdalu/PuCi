@@ -1,14 +1,14 @@
 {
   "ver": "1.0.0",
-  "uuid": "f07cb6c4-b139-426e-bddc-431efc03ff9b",
+  "uuid": "ca41bc91-7e74-4b75-871c-49d35de4b42e",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
   "subMetas": {
-    "xiaoji_0004_tou2": {
+    "neck2": {
       "ver": "1.0.3",
-      "uuid": "f377d034-966e-4cb1-8745-a254182b735d",
-      "rawTextureUuid": "f07cb6c4-b139-426e-bddc-431efc03ff9b",
+      "uuid": "57169a8e-e68b-4841-9bc0-efd8d7a1001c",
+      "rawTextureUuid": "ca41bc91-7e74-4b75-871c-49d35de4b42e",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,
@@ -16,10 +16,10 @@
       "offsetY": 0,
       "trimX": 0,
       "trimY": 0,
-      "width": 117,
-      "height": 127,
-      "rawWidth": 117,
-      "rawHeight": 127,
+      "width": 82,
+      "height": 66,
+      "rawWidth": 82,
+      "rawHeight": 66,
       "borderTop": 0,
       "borderBottom": 0,
       "borderLeft": 0,

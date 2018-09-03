@@ -1,14 +1,14 @@
 {
   "ver": "1.0.0",
-  "uuid": "1a7c25f8-2a96-45cf-94ff-4c89073b6014",
+  "uuid": "84d735e8-912e-4bbb-8b3b-f46d2a4b50f5",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
   "subMetas": {
     "xiaoji_0003_tou1": {
       "ver": "1.0.3",
-      "uuid": "778a2514-9d83-4781-945c-04c1d2fe9482",
-      "rawTextureUuid": "1a7c25f8-2a96-45cf-94ff-4c89073b6014",
+      "uuid": "8fdc0c3f-5a29-4a70-bfe6-dcab6f2f0364",
+      "rawTextureUuid": "84d735e8-912e-4bbb-8b3b-f46d2a4b50f5",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,
