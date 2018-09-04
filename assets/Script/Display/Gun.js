@@ -44,12 +44,23 @@ cc.Class({
     start () {
        
     },
+    update(){
+       var state=this.anim.getAnimationState("gun");
+       if (state.isPlaying) 
+       {
+        console.log("11111111111111111111111111111111111111111"); 
+          //  this.anim.play("idle");
+          this.anim.play('idle');
+       }else{
+        console.log("222222222222222222222222222222222222222"); 
+       }
+    },
 
     OnClick:function(event,customEventData)
     {
         console.log("evnet="+customEventData);   
         this.anim.play('gun');
-        this.anim.playAdditive('run');
+        //this.anim.playAdditive('run');
         //加载预制资源 PrefabUrl为 预制资源在 资源中的路径
         var PrefabUrl="bullet";
         cc.loader.loadRes(PrefabUrl,cc.Prefab, function(errorMessage,loadedResource){
@@ -61,14 +72,11 @@ cc.Class({
             bullet.getComponent('Bullet').init(customEventData);     
         });
     },
-    onCollisionEnter: function (other, self) {     
-        console.log("111111111111111111");
+    onCollisionEnter: function (other, self) {         
         this.node.dispatchEvent( new cc.Event.EventCustom('game_over', true) );   
         this.node.emit('game_over', {
-            msg: 'hahahah===========',
           });
           cc.director.GlobalEvent.emit('game_over', {
-            msg: 'hahahah===========',
           });
     },
     onDestroy(){
