@@ -1,6 +1,6 @@
 {
   "__type__": "cc.AnimationClip",
-  "_name": "init",
+  "_name": "idle",
   "_objFlags": 0,
   "_rawFiles": null,
   "_duration": 0.4166666666666667,
@@ -175,6 +175,58 @@
             {
               "frame": 0.4,
               "value": -14
+            },
+            {
+              "frame": 0.4166666666666667,
+              "value": 0
+            }
+          ]
+        }
+      },
+      "chibang/wing_L": {
+        "props": {
+          "rotation": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 0.1,
+              "value": 45
+            },
+            {
+              "frame": 0.21666666666666667,
+              "value": 0
+            },
+            {
+              "frame": 0.31666666666666665,
+              "value": 45
+            },
+            {
+              "frame": 0.4166666666666667,
+              "value": 0
+            }
+          ]
+        }
+      },
+      "chibang/wing_R": {
+        "props": {
+          "rotation": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 0.1,
+              "value": -45
+            },
+            {
+              "frame": 0.2,
+              "value": 0
+            },
+            {
+              "frame": 0.31666666666666665,
+              "value": -45
             },
             {
               "frame": 0.4166666666666667,

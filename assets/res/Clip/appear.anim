@@ -1,0 +1,219 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "appear",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 1.0833333333333333,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": "0",
+  "curveData": {
+    "paths": {
+      "shenti/shenti_L": {
+        "props": {
+          "scale": []
+        }
+      },
+      "shenti/shenti_R": {
+        "props": {
+          "scale": []
+        }
+      },
+      "shenti/xiaoji_0005_bozi": {
+        "props": {
+          "position": []
+        }
+      },
+      "shenti/datui_R": {
+        "props": {
+          "position": [],
+          "scale": []
+        }
+      },
+      "shenti/datui_L": {
+        "props": {
+          "position": [],
+          "scale": []
+        }
+      },
+      "shenti": {
+        "props": {
+          "scale": [],
+          "position": []
+        }
+      },
+      "chibang": {
+        "props": {
+          "position": []
+        }
+      },
+      "chibang/chi_R": {
+        "props": {
+          "rotation": []
+        }
+      },
+      "chibang/chi_L": {
+        "props": {
+          "rotation": []
+        }
+      },
+      "chibang/wing_L": {
+        "props": {
+          "rotation": [
+            {
+              "frame": 0,
+              "value": -9
+            },
+            {
+              "frame": 0.25,
+              "value": -24
+            },
+            {
+              "frame": 0.31666666666666665,
+              "value": 55
+            },
+            {
+              "frame": 0.38333333333333336,
+              "value": -16
+            },
+            {
+              "frame": 0.45,
+              "value": 51
+            },
+            {
+              "frame": 0.5166666666666667,
+              "value": -6
+            },
+            {
+              "frame": 0.5833333333333334,
+              "value": 47
+            },
+            {
+              "frame": 0.65,
+              "value": 0
+            },
+            {
+              "frame": 0.7166666666666667,
+              "value": 50
+            },
+            {
+              "frame": 0.7833333333333333,
+              "value": -3
+            },
+            {
+              "frame": 0.85,
+              "value": 43
+            },
+            {
+              "frame": 0.9166666666666666,
+              "value": -13
+            },
+            {
+              "frame": 1,
+              "value": 35
+            },
+            {
+              "frame": 1.0833333333333333,
+              "value": 0
+            }
+          ]
+        }
+      },
+      "chibang/wing_R": {
+        "props": {
+          "rotation": [
+            {
+              "frame": 0,
+              "value": 13
+            },
+            {
+              "frame": 0.25,
+              "value": 22
+            },
+            {
+              "frame": 0.31666666666666665,
+              "value": -61
+            },
+            {
+              "frame": 0.38333333333333336,
+              "value": 10
+            },
+            {
+              "frame": 0.45,
+              "value": -57
+            },
+            {
+              "frame": 0.5166666666666667,
+              "value": 5
+            },
+            {
+              "frame": 0.5833333333333334,
+              "value": -52
+            },
+            {
+              "frame": 0.65,
+              "value": -3
+            },
+            {
+              "frame": 0.7166666666666667,
+              "value": -52
+            },
+            {
+              "frame": 0.7833333333333333,
+              "value": -4
+            },
+            {
+              "frame": 0.85,
+              "value": -45
+            },
+            {
+              "frame": 0.9166666666666666,
+              "value": 11
+            },
+            {
+              "frame": 1,
+              "value": -37
+            },
+            {
+              "frame": 1.0833333333333333,
+              "value": 0
+            }
+          ]
+        }
+      }
+    },
+    "props": {
+      "position": [
+        {
+          "frame": 0,
+          "value": [
+            0,
+            -351
+          ]
+        },
+        {
+          "frame": 0.25,
+          "value": [
+            0,
+            234
+          ]
+        },
+        {
+          "frame": 1,
+          "value": [
+            0,
+            -72
+          ]
+        },
+        {
+          "frame": 1.0833333333333333,
+          "value": [
+            0,
+            -79
+          ]
+        }
+      ]
+    }
+  },
+  "events": []
+}
