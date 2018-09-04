@@ -18,28 +18,24 @@ update(dt)
 
 bgMove: function (bgList, speed)
  {
-
     //每次循环二张图片一起滚动
-
     for (var index = 0; index < bgList.length; index++) {
-
-    bgList[index].y -=speed;
-
+        bgList[index].y -=speed;
     }
 
     //y坐标减去自身的height得到这张背景刚好完全离开场景时的y值
 
     if (bgList[0].y <= 20 - bgList[0].height) {
 
-    bgList[0].y = 1000; //离开场景后将此背景图的y重新赋值，位于场景的上方
+        bgList[0].y = 1136; //离开场景后将此背景图的y重新赋值，位于场景的上方
 
     }
 
-    if (bgList[1].y <= 1020 - 2 * bgList[1].height) {
+    if (bgList[1].y <= 1136 - 2 * bgList[1].height) {
 
-    bgList[1].y = 1000;
+        bgList[1].y = 1136;
 
     }
 
-},
+    },
 })
