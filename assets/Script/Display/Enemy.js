@@ -28,7 +28,15 @@ cc.Class({
         //     }
         // },
         type:0,
-        speed:100
+        speed:100,
+        color_1:{
+            default:new cc.Color(253,167,131),
+            type:cc.Color
+        },
+        color_2:{
+            default:new cc.Color(113,205,237),
+            type:cc.Color
+        }
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -52,8 +60,12 @@ cc.Class({
      },
      init:function(_type){
          this.type=_type;
-         if (this.type==1){
-            this.node.color=new cc.color(0,0,0,255);
+         if (this.type==1)
+         {
+            this.node.color=this.color_1;//new cc.color(0,0,0,255);
+        }else
+        {
+            this.node.color=this.color_2;
         }
 
      },

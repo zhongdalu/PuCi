@@ -867,7 +867,21 @@
     },
     "_enabled": true,
     "type": 0,
-    "speed": 100
+    "speed": 100,
+    "color_1": {
+      "__type__": "cc.Color",
+      "r": 253,
+      "g": 167,
+      "b": 131,
+      "a": 255
+    },
+    "color_2": {
+      "__type__": "cc.Color",
+      "r": 113,
+      "g": 205,
+      "b": 237,
+      "a": 255
+    }
   },
   {
     "__type__": "cc.Animation",
