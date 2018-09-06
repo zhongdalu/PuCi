@@ -392,7 +392,7 @@
       "x": 0,
       "y": 0
     },
-    "_radius": 50.1
+    "_radius": 33.3
   },
   {
     "__type__": "fdc74Z9yxBF36iZEYgVjiFS",
@@ -427,12 +427,10 @@
       "__id__": 1
     },
     "_enabled": true,
-    "_defaultClip": {
-      "__uuid__": "124d21b4-301b-4cb6-bcfd-096de5d03d4b"
-    },
+    "_defaultClip": null,
     "_clips": [
       {
-        "__uuid__": "124d21b4-301b-4cb6-bcfd-096de5d03d4b"
+        "__uuid__": "c3073159-be0c-4f14-a763-e1276e9384d0"
       }
     ],
     "playOnLoad": true
