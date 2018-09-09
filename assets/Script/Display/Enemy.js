@@ -51,32 +51,30 @@ cc.Class({
 
     start () {
         this.count=1;
-        let enemyHead= cc.instantiate(this.head);
-        var _type=Math.round(Math.random(0,1));
-        enemyHead.parent=this.node;
-        enemyHead.getComponent('EnemyHead').init(_type);//接下来就可以调用 enemy 身上的脚本进行初始   
-        enemyHead.getComponent('EnemyHead').SetPosY(0); 
-
         this.bodyLinkedList=new LinkedList();
         var bodyNumMin=copyData.type_1[0].num_min;
         var bodyNumMax=copyData.type_1[0].num_max;
         var bodyNumRan=rand(bodyNumMin,bodyNumMax);
         console.log("bodyNumRan============="+bodyNumRan);
-        for(var i=0;i<bodyNumRan;i++)
+        for(var i=bodyNumRan;i>0;i--)
         {
             let enemyBody = cc.instantiate(this.body);
             this.bodyLinkedList.append(enemyBody);
             enemyBody.parent = this.node; // 将生成的敌人加入节点树
             var _type=Math.round(Math.random(0,1));
            enemyBody.getComponent('EnemyBody').init(_type);//接下来就可以调用 enemy 身上的脚本进行初始   
-           enemyBody.getComponent('EnemyBody').SetPosY((i+1)*40); 
+           enemyBody.getComponent('EnemyBody').SetPosY((i)*40); 
            // body;
         } 
+        let enemyHead= cc.instantiate(this.head);
+        var _type=Math.round(Math.random(0,1));
+        enemyHead.parent=this.node;
+        enemyHead.getComponent('EnemyHead').init(_type);//接下来就可以调用 enemy 身上的脚本进行初始   
+        enemyHead.getComponent('EnemyHead').SetPosY(0); 
     },
 
      update (dt) {
         this.pos_y=this.pos_y-dt*this.speed;
-        console.log("this.pos_y==================="+this.pos_y);
         this.node.y=this.pos_y;
      },
         
