@@ -8,6 +8,9 @@
 //  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
 //  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/life-cycle-callbacks.html
 var Bullet=require("Bullet");
+var LinkedList=require("LinkedList").LinkedList;
+var copyData=require("CopyData").CopyData;
+var rand=require("Utils").rand
 cc.Class({
     extends: cc.Component,
 
@@ -26,75 +29,60 @@ cc.Class({
         //     set (value) {
         //         this._bar = value;
         //     }
-        // },
-        type:0,
-        speed:100,
-        color_1:{
-            default:new cc.Color(253,167,131),
-            type:cc.Color
+        // },  
+        speed:100,   
+        head:{
+            default:null,
+            type:cc.Prefab,
         },
-        color_2:{
-            default:new cc.Color(113,205,237),
-            type:cc.Color
-        }
+        body:{
+            default:null,
+            type:cc.Prefab,
+        },
+        pos_y:800,
     },
 
     // LIFE-CYCLE CALLBACKS:
 
      onLoad () {
-        cc.director.getCollisionManager().enabled = true;
-        // cc.director.getCollisionManager().enabledDebugDraw = true;
-        // cc.director.getCollisionManager().enabledDrawBoundingBox  = true;
+         
          
      },
 
     start () {
-        this.pos_y=this.node.y;
         this.count=1;
-       
+        let enemyHead= cc.instantiate(this.head);
+        var _type=Math.round(Math.random(0,1));
+        enemyHead.parent=this.node;
+        enemyHead.getComponent('EnemyHead').init(_type);//接下来就可以调用 enemy 身上的脚本进行初始   
+        enemyHead.getComponent('EnemyHead').SetPosY(0); 
+
+        this.bodyLinkedList=new LinkedList();
+        var bodyNumMin=copyData.type_1[0].num_min;
+        var bodyNumMax=copyData.type_1[0].num_max;
+        var bodyNumRan=rand(bodyNumMin,bodyNumMax);
+        console.log("bodyNumRan============="+bodyNumRan);
+        for(var i=0;i<bodyNumRan;i++)
+        {
+            let enemyBody = cc.instantiate(this.body);
+            this.bodyLinkedList.append(enemyBody);
+            enemyBody.parent = this.node; // 将生成的敌人加入节点树
+            var _type=Math.round(Math.random(0,1));
+           enemyBody.getComponent('EnemyBody').init(_type);//接下来就可以调用 enemy 身上的脚本进行初始   
+           enemyBody.getComponent('EnemyBody').SetPosY((i+1)*40); 
+           // body;
+        } 
     },
 
      update (dt) {
         this.pos_y=this.pos_y-dt*this.speed;
+        console.log("this.pos_y==================="+this.pos_y);
         this.node.y=this.pos_y;
      },
-     init:function(_type){
-         this.type=_type;
-         if (this.type==1)
-         {
-            this.node.color=this.color_1;//new cc.color(0,0,0,255);
-        }else
-        {
-            this.node.color=this.color_2;
-        }
-
-     },
-     onCollisionEnter: function (other, self) {
-         var bullet=other.getComponent("Bullet");
-         if(!cc.isValid(bullet))
-         {
-             return;
-         }
-        var  other_type=bullet.type;
-        if(other_type!=this.type){
-            this.count=this.count+1;
-        }else{
-            this.count=this.count-1;
-        }
-        if(this.count==0){
-            this.node.destroy();
-            cc.director.GlobalEvent.emit('score_add', {
-                msg: 1,
-              });
-        }else{
-            var scale=1+(this.count-1)/10;
-            this.node.setScale(scale, scale);
-        }
         
-    },
     onDestroy()
     {
-        console.log("enemy estroy========");
+        console.log("enemy destroy========");
        
     }
 });

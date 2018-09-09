@@ -31,4 +31,4 @@ cc.director.GlobalEvent = {
             this.handles_[eventName][i] = null
         }
     },
-}
+};

@@ -66,6 +66,7 @@ cc.Class({
        this.dtTime=0
        this.parentNode=cc.find("Canvas");
        this.enemyList=[];
+  //     this.createEnemy(this.parentNode);
         
     },
     createEnemy: function (parentNode) {
@@ -75,15 +76,13 @@ cc.Class({
         } else { // 如果没有空闲对象，也就是对象池中备用对象不够时，我们就用 cc.instantiate 重新创建
             enemy = cc.instantiate(this.enemyPrefab);
         }
-        enemy.parent = parentNode; // 将生成的敌人加入节点树
-        var _type=Math.round(Math.random(0,1));
-        enemy.getComponent('Enemy').init(_type); //接下来就可以调用 enemy 身上的脚本进行初始化
+        enemy.parent = parentNode; // 将生成的敌人加入节点树        
         this.enemyList.push(enemy);
     },
 
      update (dt) {
         this.dtTime=this.dtTime+dt;
-        if (this.dtTime>1)
+        if (this.dtTime>3)
         {
             this.dtTime=0;        
             this.createEnemy(this.parentNode);

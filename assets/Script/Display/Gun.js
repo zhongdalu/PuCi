@@ -48,11 +48,9 @@ cc.Class({
        var state=this.anim.getAnimationState("gun");
        if (state.isPlaying) 
        {
-        console.log("11111111111111111111111111111111111111111"); 
-          //  this.anim.play("idle");
           this.anim.play('idle');
        }else{
-        console.log("222222222222222222222222222222222222222"); 
+    
        }
     },
 
