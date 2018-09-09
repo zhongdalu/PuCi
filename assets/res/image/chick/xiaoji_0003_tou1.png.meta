@@ -1,10 +1,9 @@
 {
-  "ver": "2.2.0",
+  "ver": "1.0.0",
   "uuid": "84d735e8-912e-4bbb-8b3b-f46d2a4b50f5",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
-  "premultiplyAlpha": false,
   "subMetas": {
     "xiaoji_0003_tou1": {
       "ver": "1.0.3",
