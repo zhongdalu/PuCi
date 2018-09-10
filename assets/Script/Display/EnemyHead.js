@@ -40,6 +40,10 @@ cc.Class({
             default:new cc.Color(113,205,237),
             type:cc.Color
         },
+        destroyEffect:{
+            default:null,
+            type:cc.Prefab
+        }
 
     },
 
@@ -100,6 +104,7 @@ cc.Class({
     onDestroy()
     {
         console.log("enemy destroy========");
-       
+        var effect=cc.instantiate(this.destroyEffect);
+        effect.getComponent()
     }
 });
