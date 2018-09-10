@@ -47,8 +47,13 @@ cc.Class({
             //cc.director.loadScene("Start");   
             this.ReStart();
           },this);
-          cc.director.GlobalEvent.on('score_add', function (event) {
-            console.log("sore_add===================="+event.msg);//+event.detail.msg
+          cc.director.GlobalEvent.on('score_add', function (event) {    
+            var effect=cc.instantiate(event.effect);
+            this.parentNode.addChild(effect); 
+            effect.x=event.position.x;   
+            effect.y=event.position.y;     
+            var ani=effect.getComponent(cc.Animation);
+            ani.play('monsterDie');
             this.scoreNum=this.scoreNum+event.msg;
             this.scoreTxt.string=this.scoreNum;
           },this);
@@ -58,6 +63,7 @@ cc.Class({
         this.scoreTxt.string='0';
         this.score.string=this.text;
         this.enemyPool = new cc.NodePool();
+        this.destroyEffectPool=new cc.NodePool();
         let initCount = 5;
         for (let i = 0; i < initCount; ++i) {
             let enemy = cc.instantiate(this.enemyPrefab); // 创建节点

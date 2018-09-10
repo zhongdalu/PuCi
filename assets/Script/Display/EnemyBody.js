@@ -86,8 +86,12 @@ cc.Class({
         }
         if(this.count==0){
             this.node.destroy();
+            var  pos_x=this.node.x+this.node.parent.x;   
+            var  pos_y=this.node.y+this.node.parent.y;  
             cc.director.GlobalEvent.emit('score_add', {
                 msg: 1,
+                position:{x:pos_x,y:pos_y},
+                effect:this.destroyEffect
               });
         }else{
             var scale=1+(this.count-1)/10;

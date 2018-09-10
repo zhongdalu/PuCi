@@ -90,11 +90,15 @@ cc.Class({
         }else{
             this.count=this.count-1;
         }
-        if(this.count==0){
-            this.node.destroy();
+        if(this.count==0){       
+            var  pos_x=this.node.x+this.node.parent.x;   
+            var  pos_y=this.node.y+this.node.parent.y;  
             cc.director.GlobalEvent.emit('score_add', {
-                msg: 1,
+                msg:1,
+                position:{x:pos_x,y:pos_y},
+                effect:this.destroyEffect
               });
+              this.node.destroy();
         }else{
             var scale=1+(this.count-1)/10;
             this.node.setScale(scale, scale);
@@ -104,7 +108,5 @@ cc.Class({
     onDestroy()
     {
         console.log("enemy destroy========");
-        var effect=cc.instantiate(this.destroyEffect);
-        effect.getComponent()
     }
 });
