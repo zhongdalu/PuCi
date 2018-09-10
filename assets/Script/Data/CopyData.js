@@ -11,7 +11,7 @@
 var CopyData=
 {
     "type_1":[
-        {"speed":1, "num_min":2,"num_max":5},     
+        {"speed":100, "num_min":2,"num_max":5},     
     ]
 }
 module.exports={

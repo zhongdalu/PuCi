@@ -52,6 +52,7 @@ cc.Class({
     start () {
         this.count=1;
         this.bodyLinkedList=new LinkedList();
+        this.speed=copyData.type_1[0].speed;
         var bodyNumMin=copyData.type_1[0].num_min;
         var bodyNumMax=copyData.type_1[0].num_max;
         var bodyNumRan=rand(bodyNumMin,bodyNumMax);
