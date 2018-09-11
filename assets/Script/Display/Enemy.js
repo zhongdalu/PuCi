@@ -9,7 +9,7 @@
 //  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/life-cycle-callbacks.html
 var Bullet=require("Bullet");
 var LinkedList=require("LinkedList").LinkedList;
-var copyData=require("CopyData").CopyData;
+//var copyData=require("CopyData").CopyData;
 var rand=require("Utils").rand
 cc.Class({
     extends: cc.Component,
@@ -29,59 +29,84 @@ cc.Class({
         //     set (value) {
         //         this._bar = value;
         //     }
-        // },  
-        speed:100,   
-        head:{
-            default:null,
-            type:cc.Prefab,
+        // },
+        type:0,
+        speed:100,
+        color_1:{
+            default:new cc.Color(253,167,131),
+            type:cc.Color
         },
-        body:{
-            default:null,
-            type:cc.Prefab,
+        color_2:{
+            default:new cc.Color(113,205,237),
+            type:cc.Color
         },
-        pos_y:800,
+        destroyEffect:{
+            default:null,
+            type:cc.Prefab
+        }
+
     },
 
     // LIFE-CYCLE CALLBACKS:
 
      onLoad () {
+        cc.director.getCollisionManager().enabled = true;
+        // cc.director.getCollisionManager().enabledDebugDraw = true;
+        // cc.director.getCollisionManager().enabledDrawBoundingBox  = true;
          
-         
+     },
+     SetPosY:function(posY){
+        this.pos_y=posY;
      },
 
     start () {
-        this.count=1;
-        this.bodyLinkedList=new LinkedList();
-        this.speed=copyData.type_1[0].speed;
-        var bodyNumMin=copyData.type_1[0].num_min;
-        var bodyNumMax=copyData.type_1[0].num_max;
-        var bodyNumRan=rand(bodyNumMin,bodyNumMax);
-        console.log("bodyNumRan============="+bodyNumRan);
-        for(var i=bodyNumRan;i>0;i--)
-        {
-            let enemyBody = cc.instantiate(this.body);
-            this.bodyLinkedList.append(enemyBody);
-            enemyBody.parent = this.node; // 将生成的敌人加入节点树
-            var _type=Math.round(Math.random(0,1));
-           enemyBody.getComponent('EnemyBody').init(_type);//接下来就可以调用 enemy 身上的脚本进行初始   
-           enemyBody.getComponent('EnemyBody').SetPosY((i)*40); 
-           // body;
-        } 
-        let enemyHead= cc.instantiate(this.head);
-        var _type=Math.round(Math.random(0,1));
-        enemyHead.parent=this.node;
-        enemyHead.getComponent('EnemyHead').init(_type);//接下来就可以调用 enemy 身上的脚本进行初始   
-        enemyHead.getComponent('EnemyHead').SetPosY(0); 
+        this.node.y=this.pos_y;
+        this.count=1;     
     },
 
      update (dt) {
-        this.pos_y=this.pos_y-dt*this.speed;
-        this.node.y=this.pos_y;
+       
      },
+     init:function(_type){
+         this.type=_type;
+         if (this.type==1)
+         {
+            this.node.color=this.color_1;//new cc.color(0,0,0,255);
+        }else
+        {
+            this.node.color=this.color_2;
+        }
+
+     },
+     onCollisionEnter: function (other, self) {
+         var bullet=other.getComponent("Bullet");
+         if(!cc.isValid(bullet))
+         {
+             return;
+         }
+        var  other_type=bullet.type;
+        if(other_type!=this.type){
+            this.count=this.count+1;
+        }else{
+            this.count=this.count-1;
+        }
+        if(this.count==0){       
+            var  pos_x=this.node.x+this.node.parent.x;   
+            var  pos_y=this.node.y+this.node.parent.y;  
+            cc.director.GlobalEvent.emit('score_add', {
+                msg:1,
+                position:{x:pos_x,y:pos_y},
+                effect:this.destroyEffect
+              });
+              this.node.destroy();
+        }else{
+            var scale=1+(this.count-1)/10;
+            this.node.setScale(scale, scale);
+        }
         
+    },
     onDestroy()
     {
         console.log("enemy destroy========");
-       
     }
 });

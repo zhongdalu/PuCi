@@ -8,12 +8,12 @@
 //  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
 //  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/life-cycle-callbacks.html
 
-var CopyData=
+window.CopyData=
 {
     "type_1":[
         {"speed":100, "num_min":2,"num_max":5},     
     ]
 }
-module.exports={
-    CopyData:CopyData,
-};
+// module.exports={
+//     CopyData:CopyData,
+// };
