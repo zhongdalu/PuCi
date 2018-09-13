@@ -32,6 +32,7 @@ cc.Class({
         // },
         type:0,
         speed:100,
+        count:1,
         color_1:{
             default:new cc.Color(253,167,131),
             type:cc.Color

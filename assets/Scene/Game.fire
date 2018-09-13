@@ -4046,6 +4046,15 @@
     "_components": [
       {
         "__id__": 91
+      },
+      {
+        "__id__": 92
+      },
+      {
+        "__id__": 93
+      },
+      {
+        "__id__": 94
       }
     ],
     "_prefab": null,
@@ -4109,9 +4118,48 @@
       "__id__": 15
     },
     "text": "Score:",
+    "_id": "20XSD0UvNAsINHKGnLnxjE"
+  },
+  {
+    "__type__": "246614neq5NEYm8g9Cx90lt",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 90
+    },
+    "_enabled": true,
+    "isFight": false,
     "enemyPrefab": {
       "__uuid__": "ce1974b2-b569-4733-a2e6-513167b9d28a"
     },
-    "_id": "20XSD0UvNAsINHKGnLnxjE"
+    "_id": "a2JYU+y2VLJbMMtrCXlDq3"
+  },
+  {
+    "__type__": "4724cAL1fJEn74zujsJT7xo",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 90
+    },
+    "_enabled": true,
+    "isFight": false,
+    "enemyPrefab": {
+      "__uuid__": "ce1974b2-b569-4733-a2e6-513167b9d28a"
+    },
+    "_id": "f4esrszINAsrdUtK3OE4b8"
+  },
+  {
+    "__type__": "060a5mKeqVFPIVdiZpJtPXu",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 90
+    },
+    "_enabled": true,
+    "isFight": false,
+    "enemyPrefab": {
+      "__uuid__": "ce1974b2-b569-4733-a2e6-513167b9d28a"
+    },
+    "_id": "e1xkmkF7VOcZZXMxbT5Kab"
   }
 ]

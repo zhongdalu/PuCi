@@ -35,17 +35,25 @@ cc.Class({
             type:cc.Label
         },
         text:"Score:",
-        enemyPrefab: cc.Prefab
+        copyIndex:0
+       
     },
 
     // LIFE-CYCLE CALLBACKS:
 
      onLoad () {
+        console.log('00000000000000000000000');
          this.scoreNum=0
+         this.parentNode=cc.find("Canvas");
+         cc.director.GlobalEvent.on('next_copy', function (event) {
+            console.log("next_copy===================="+event.msg);//+event.detail.msg
+            //cc.director.loadScene("Start");   
+            this.nextCopy();
+          },this);
           cc.director.GlobalEvent.on('game_over', function (event) {
             console.log("game_over===================="+event.msg);//+event.detail.msg
             //cc.director.loadScene("Start");   
-            this.ReStart();
+            this.gameOver();
           },this);
           cc.director.GlobalEvent.on('score_add', function (event) {    
             var effect=cc.instantiate(event.effect);
@@ -57,59 +65,37 @@ cc.Class({
             this.scoreNum=this.scoreNum+event.msg;
             this.scoreTxt.string=this.scoreNum;
           },this);
+          this.copyList=[this.node.getComponent('Copy_1'),this.node.getComponent('Copy_2'),this.node.getComponent('Copy_3')];
      },
 
     start () {
         this.scoreTxt.string='0';
-        this.score.string=this.text;
-        this.enemyPool = new cc.NodePool();
-        this.destroyEffectPool=new cc.NodePool();
-        let initCount = 5;
-        for (let i = 0; i < initCount; ++i) {
-            let enemy = cc.instantiate(this.enemyPrefab); // 创建节点
-            this.enemyPool.put(enemy); // 通过 putInPool 接口放入对象池
-        }
-       this.dtTime=0
-       this.parentNode=cc.find("Canvas");
-       this.enemyList=[];
-  //     this.createEnemy(this.parentNode);
-        
+        this.score.string=this.text;  
+        var copy=this.copyList[this.copyIndex];
+        copy.isFight=true;
     },
-    createEnemy: function (parentNode) {
-        let enemy = null;
-        if (this.enemyPool.size() > 0) { // 通过 size 接口判断对象池中是否有空闲的对象
-            enemy = this.enemyPool.get();
-        } else { // 如果没有空闲对象，也就是对象池中备用对象不够时，我们就用 cc.instantiate 重新创建
-            enemy = cc.instantiate(this.enemyPrefab);
-        }
-        enemy.parent = parentNode; // 将生成的敌人加入节点树        
-        this.enemyList.push(enemy);
-    },
-
-     update (dt) {
-        this.dtTime=this.dtTime+dt;
-        if (this.dtTime>3)
-        {
-            this.dtTime=0;        
-            this.createEnemy(this.parentNode);
-        }
-     },
+    
      onDestroy(){
+        console.log('1111111111111111111111111111');
+        cc.director.GlobalEvent.off('next_copy');
         cc.director.GlobalEvent.off('game_over');
-        cc.director.GlobalEvent.off('sore_add');
+        cc.director.GlobalEvent.off('score_add');
         
     },
-    ReStart:function(){
-        for ( var i = 0,l = this.enemyList.length; i < l; i++ ){
-            //这样的写法是最常见的。最好理解的，也是通用的，对于a,b这两种类型的(伪)数组都能够。
-            var en=this.enemyList[i];
-           // this.enemyList.node.destroy();
-            en.destroy()
-        
-            } 
-        this.enemyList=[];
-        this.scoreNum=0;
-        this.scoreTxt.string=this.scoreNum;
-        console.log('this.scoreTxt==========='+this.scoreNum);
+    gameOver:function(){
+        cc.director.loadScene("Start");     
+    },
+    nextCopy:function(){
+       this.copyIndex=this.copyIndex+1;
+       this.copyIndex=this.copyIndex%3;
+       for(var i=0;i<3;i++ ){
+            if(i==this.copyIndex){
+                this.copyList[i].isFight=true
+            }else{
+                this.copyList[i].clear()
+                this.copyList[i].isFight=false
+            }
+       }  
+       
     }
 });

@@ -10,6 +10,8 @@ cc.director.GlobalEvent = {
         for ( var findEvenName in this.handles_ ){
             if (findEvenName == eventName) {
                 for (var i = 0; i < this.handles_[findEvenName].length; i++) {
+                    console.log('eventName================='+eventName);
+                    if (this.handles_[findEvenName][i]==null) continue;
                     var returnValue = this.handles_[findEvenName][i](data)
                     returns.push(returnValue)
                 }
@@ -27,8 +29,11 @@ cc.director.GlobalEvent = {
     },
     //通过事件名和target移除一个监听器
     off: function (eventName) {
-        for (var i = 0; i < this.handles_[eventName].length; i++) {
-            this.handles_[eventName][i] = null
+        if(this.handles_[eventName]){
+            for (var i = 0; i < this.handles_[eventName].length; i++) {
+                this.handles_[eventName][i] = null
+            }
         }
+        
     },
 };

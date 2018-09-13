@@ -71,9 +71,9 @@ cc.Class({
         });
     },
     onCollisionEnter: function (other, self) {         
-        this.node.dispatchEvent( new cc.Event.EventCustom('game_over', true) );   
-        this.node.emit('game_over', {
-          });
+        // this.node.dispatchEvent( new cc.Event.EventCustom('game_over', true) );   
+        // this.node.emit('game_over', {
+        //   });
           cc.director.GlobalEvent.emit('game_over', {
           });
     },

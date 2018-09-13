@@ -10,8 +10,8 @@
 
 window.CopyData=
 {
-    "type_1":[
-        {"speed":100, "num_min":2,"num_max":5},     
+    "copy_1":[//波数，速度，最小连续，最大连续
+        {'count':3,"speed":100, "num_min":2,"num_max":5},     
     ]
 }
 // module.exports={

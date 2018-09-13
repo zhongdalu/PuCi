@@ -22,15 +22,25 @@ cc.Class({
         //     type: cc.SpriteFrame, // optional, default is typeof default
         //     serializable: true,   // optional, default is true
         // },
-        // bar: {
-        //     get () {
-        //         return this._bar;
-        //     },
-        //     set (value) {
-        //         this._bar = value;
-        //     }
-        // },  
-        speed:100,   
+        bodyNumMin: {
+            get () {
+                return this._bodyNumMin;
+            },
+            set (value) {
+                this._bodyNumMin = value;
+            }
+        },  
+        bodyNumMax: {
+            get () {
+                return this._bodyNumMax;
+            },
+            set (value) {
+                this._bodyNumMax = value;
+            }
+        },  
+        speed:100, 
+        // bodyNumMin:0,
+        // bodyNumMax:0,
         head:{
             default:null,
             type:cc.Prefab,
@@ -39,7 +49,7 @@ cc.Class({
             default:null,
             type:cc.Prefab,
         },
-        pos_y:800,
+        pos_y:600,
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -53,10 +63,7 @@ cc.Class({
         copyData=window.CopyData;
         this.count=1;
         this.bodyLinkedList=new LinkedList();
-        this.speed=copyData.type_1[0].speed;
-        var bodyNumMin=copyData.type_1[0].num_min;
-        var bodyNumMax=copyData.type_1[0].num_max;
-        var bodyNumRan=rand(bodyNumMin,bodyNumMax);
+        var bodyNumRan=rand(this.bodyNumMin,this.bodyNumMax);
         console.log("bodyNumRan============="+bodyNumRan);
         for(var i=bodyNumRan;i>0;i--)
         {
