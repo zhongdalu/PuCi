@@ -1,11 +1,12 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "87eff5e8-556a-4763-825a-45c0c40b0f22",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
-    "cockscomb": {
+    "Cockscomb": {
       "ver": "1.0.3",
       "uuid": "7698826c-fad0-42f7-b66e-b64b021545c1",
       "rawTextureUuid": "87eff5e8-556a-4763-825a-45c0c40b0f22",
