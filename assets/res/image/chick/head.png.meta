@@ -1,10 +1,9 @@
 {
-  "ver": "2.2.0",
+  "ver": "1.0.0",
   "uuid": "e6924333-c917-4d96-89cc-7aabbe312f57",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
-  "premultiplyAlpha": false,
   "subMetas": {
     "head": {
       "ver": "1.0.3",
@@ -17,10 +16,10 @@
       "offsetY": 0,
       "trimX": 0,
       "trimY": 0,
-      "width": 118,
-      "height": 100,
-      "rawWidth": 118,
-      "rawHeight": 100,
+      "width": 116,
+      "height": 105,
+      "rawWidth": 116,
+      "rawHeight": 105,
       "borderTop": 0,
       "borderBottom": 0,
       "borderLeft": 0,
