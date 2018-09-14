@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "aeac1b81-7559-4d89-a6bc-631ea497d3b7",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "cockscomb_gun": {
+      "ver": "1.0.3",
+      "uuid": "5cf1835a-57bb-4afa-bf97-3431228a15a0",
+      "rawTextureUuid": "aeac1b81-7559-4d89-a6bc-631ea497d3b7",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 43,
+      "height": 77,
+      "rawWidth": 43,
+      "rawHeight": 77,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
