@@ -35,14 +35,14 @@ cc.Class({
             type:cc.Label
         },
         text:"Score:",
-        copyIndex:0
+        copyIndex:0,
+        gameRound:1,
        
     },
 
     // LIFE-CYCLE CALLBACKS:
 
      onLoad () {
-        console.log('00000000000000000000000');
          this.scoreNum=0
          this.parentNode=cc.find("Canvas");
          cc.director.GlobalEvent.on('next_copy', function (event) {
@@ -64,6 +64,10 @@ cc.Class({
             ani.play('monsterDie');
             this.scoreNum=this.scoreNum+event.msg;
             this.scoreTxt.string=this.scoreNum;
+            if (this.copyCurrent && this.copyCurrent.count==0)
+            {
+                this.nextCopy();
+            }
           },this);
           this.copyList=[this.node.getComponent('Copy_1'),this.node.getComponent('Copy_2'),this.node.getComponent('Copy_3')];
      },
@@ -72,11 +76,11 @@ cc.Class({
         this.scoreTxt.string='0';
         this.score.string=this.text;  
         var copy=this.copyList[this.copyIndex];
-        copy.isFight=true;
+        copy.begin(this.gameRound);
+        this.copyCurrent=copy;
     },
     
      onDestroy(){
-        console.log('1111111111111111111111111111');
         cc.director.GlobalEvent.off('next_copy');
         cc.director.GlobalEvent.off('game_over');
         cc.director.GlobalEvent.off('score_add');
@@ -87,13 +91,14 @@ cc.Class({
     },
     nextCopy:function(){
        this.copyIndex=this.copyIndex+1;
-       this.copyIndex=this.copyIndex%3;
+       let copyIndex=this.copyIndex%3;
+       this.gameRound=this.copyIndex/3;
        for(var i=0;i<3;i++ ){
-            if(i==this.copyIndex){
-                this.copyList[i].isFight=true
+            if(i==copyIndex){
+                this.copyList[i].begin(this.gameRound);
+                this.copyCurrent=this.copyList[i];
             }else{
-                this.copyList[i].clear()
-                this.copyList[i].isFight=false
+                this.copyList[i].over()
             }
        }  
        

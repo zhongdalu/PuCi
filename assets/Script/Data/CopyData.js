@@ -9,10 +9,11 @@
 //  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/life-cycle-callbacks.html
 
 window.CopyData=
-{
-    "copy_1":[//波数，速度，最小连续，最大连续
-        {'count':3,"speed":100, "num_min":2,"num_max":5},     
-    ]
+{//波数，速度，最小连续，最大连续
+    "copy_1":{'count':3,"speed":100, "num_min":2,"num_max":5,'score':20},
+    "copy_2":{'count':3,"speed":100, "num_min":2,"num_max":5,'score':20},     
+    "copy_3":{'count':3,"speed":100, "num_min":2,"num_max":5,'score':20},          
+    
 }
 // module.exports={
 //     CopyData:CopyData,

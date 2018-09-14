@@ -9,6 +9,7 @@
 //  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/life-cycle-callbacks.html
 
 var copydata;
+var Expressions=require('Expressions');
 cc.Class({
     extends:cc.Component,    
     properties: {
@@ -25,22 +26,33 @@ cc.Class({
         },    
         enemyPrefab: cc.Prefab,
         count:0,
+        gameRound:1
     },
     start(){
        this.init();
     },
     init:function(){
-        copydata=window.CopyData['copy_1'][0];
-        this.count=copydata.count;
         this.enemyPool = new cc.NodePool();    
         let initCount = 5;
         for (let i = 0; i < initCount; ++i) {
             let enemy = cc.instantiate(this.enemyPrefab); // 创建节点
             this.enemyPool.put(enemy); // 通过 putInPool 接口放入对象池
         }
-       this.dtTime=0
        this.parentNode=cc.find("Canvas");
-       this.enemyList=[];
+    },
+
+    begin:function(round){
+        this.gameRound=round || 1; 
+        this.expressions=Expressions.getInstance(1);
+        this.expressions.setRound(this.gameRound);
+        this.count=this.expressions.getScore();
+        console.log('this.count_totle============='+this.count);
+        this.speed=this.expressions.getSpeed();
+        this.num_min=this.expressions.getNumMin();
+        this.num_max=this.expressions.getNumMax();
+        this.dtTime=0
+        this.enemyList=[];
+        this.isFight=true;
     },
 
     createEnemy: function (parentNode) {
@@ -50,11 +62,16 @@ cc.Class({
         } else { // 如果没有空闲对象，也就是对象池中备用对象不够时，我们就用 cc.instantiate 重新创建
             enemy = cc.instantiate(this.enemyPrefab);
         }
-        enemy.parent = parentNode; // 将生成的敌人加入节点树    
+        enemy.parent = parentNode; // 将生成的敌人加入节点树   
+        var bodyNumRan=window.utils.rand(this.num_min,this.num_max); 
+        if (this.count<this.num_max){
+            bodyNumRan=this.count
+        }
+        this.count=this.count-bodyNumRan;
+        console.log('this.count============='+this.count);
         var enemyComponent=enemy.getComponent('EnemyNode') 
-        enemyComponent.speed=copydata.speed;
-        enemyComponent.bodyNumMin=copydata.num_min;
-        enemyComponent.bodyNumMax=copydata.num_max;   
+        enemyComponent.speed=this.speed;
+        enemyComponent.bodyNumRan=bodyNumRan;
         this.enemyList.push(enemy);
     },
     update (dt) {
@@ -65,12 +82,11 @@ cc.Class({
         if (this.dtTime>3 && this.count>=0)
         {
             this.dtTime=0;        
-            this.createEnemy(this.parentNode);
-            this.count=this.count-1;
+            this.createEnemy(this.parentNode);          
         }
      },
 
-    clear:function(params) {
+    over:function(params) {
         for ( var i = 0,l = this.enemyList.length; i < l; i++ ){
             //这样的写法是最常见的。最好理解的，也是通用的，对于a,b这两种类型的(伪)数组都能够。
             var en=this.enemyList[i];
@@ -81,6 +97,7 @@ cc.Class({
         this.enemyList=[];
         this.scoreNum=0;
         this.scoreTxt.string=this.scoreNum;
+        this.isFight=false;
         console.log('this.scoreTxt==========='+this.scoreNum);
     }
 
