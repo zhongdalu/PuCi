@@ -71,12 +71,9 @@ cc.Class({
          }
      },
      onCollisionEnter: function (other, self) {
-        console.log('on collision enter-----------------');
-    
         this.node.destroy();
     },
     init:function(_type){
-        console.log('Bullet_type-----------------'+_type);
         this.type=_type;
     }
 });

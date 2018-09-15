@@ -43,8 +43,10 @@ cc.Class({
          this.parentNode=cc.find("Canvas/fightNode");
          cc.director.GlobalEvent.on('next_copy', function (event) {
             console.log("next_copy===================="+event.msg);//+event.detail.msg
-            //cc.director.loadScene("Start");   
-            this.nextCopy();
+            //cc.director.loadScene("Start");  
+            this.scheduleOnce(function() {
+                this.nextCopy();
+            }, 3) 
           },this);
           cc.director.GlobalEvent.on('game_over', function (event) {
             console.log("game_over===================="+event.msg);//+event.detail.msg
@@ -60,10 +62,6 @@ cc.Class({
             ani.play('monsterDie');
             this.scoreNum=this.scoreNum+event.msg;
             this.scoreTxt.string=this.scoreNum;
-            if (this.copyCurrent && this.copyCurrent.count==0)
-            {
-                this.nextCopy();
-            }
           },this);
           this.copyList=[this.node.getComponent('Copy_1'),this.node.getComponent('Copy_2'),this.node.getComponent('Copy_3')];
      },

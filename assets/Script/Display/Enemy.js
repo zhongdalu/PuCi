@@ -68,7 +68,8 @@ cc.Class({
      update (dt) {
        
      },
-     init:function(_type){
+     init:function(_type,_callback){
+         this.callback=_callback;
          this.type=_type;
          if (this.type==1)
          {
@@ -99,6 +100,10 @@ cc.Class({
                 position:{x:pos_x,y:pos_y},
                 effect:this.destroyEffect
               });
+              if(this.callback){
+                  console.log('2222222222222222222222222222');
+                  this.callback()
+              }
               this.node.destroy();
         }else{
             var scale=1+(this.count-1)/10;
@@ -108,6 +113,8 @@ cc.Class({
     },
     onDestroy()
     {
+       console.log('===========================');
+       
        
     }
 });

@@ -28,10 +28,26 @@ cc.Class({
         count:0,
         gameRound:1
     },
+    onLoad(){
+        cc.director.GlobalEvent.on('enemyNode_destroy', function (event) {
+            if (this.isFight==false) return;
+            this.createEnemyData.pop()
+            if (this.createEnemyData.length==0)
+            {
+                console.log("nextCopy====================");//+event.detail.msg
+                cc.director.GlobalEvent.emit('next_copy', {
+                });
+            }
+          },this);
+    },
     start(){
-       this.init();
+      
     },
     init:function(){
+      
+    },
+
+    begin:function(round){
         this.enemyPool = new cc.NodePool();    
         let initCount = 5;
         for (let i = 0; i < initCount; ++i) {
@@ -39,9 +55,6 @@ cc.Class({
             this.enemyPool.put(enemy); // 通过 putInPool 接口放入对象池
         }
        this.parentNode=cc.find("Canvas/fightNode");
-    },
-
-    begin:function(round){
         this.gameRound=round || 1; 
         this.expressions=Expressions.getInstance(1);
         this.expressions.setRound(this.gameRound);
@@ -53,9 +66,32 @@ cc.Class({
         this.dtTime=0
         this.enemyList=[];
         this.isFight=true;
+        this.createEnemyData=[];
+        this.createEnemyDataClone=[];
+        while (this.count>0) {
+            var bodyNumRan=window.utils.rand(this.num_min,this.num_max); 
+            if (this.count<this.num_max){
+                bodyNumRan=this.count
+            }
+            this.count=this.count-bodyNumRan;
+            this.createEnemyData.push(bodyNumRan);   
+            this.createEnemyDataClone.push(bodyNumRan); 
+        }
+        this.yieldFunction();
     },
 
-    createEnemy: function (parentNode) {
+    yieldFunction:function(index){
+        index=index || 0
+        let data=this.createEnemyDataClone[index];
+        if(!data) return;
+        this.createEnemy(data);
+        this.scheduleOnce(function() {
+            this.yieldFunction(index+1);
+        }, data*(1/(this.speed/100)))
+    },
+
+    createEnemy: function (bodyNumRan) {
+        let parentNode=this.parentNode
         let enemy = null;
         if (this.enemyPool.size() > 0) { // 通过 size 接口判断对象池中是否有空闲的对象
             enemy = this.enemyPool.get();
@@ -63,12 +99,6 @@ cc.Class({
             enemy = cc.instantiate(this.enemyPrefab);
         }
         enemy.parent = parentNode; // 将生成的敌人加入节点树   
-        var bodyNumRan=window.utils.rand(this.num_min,this.num_max); 
-        if (this.count<this.num_max){
-            bodyNumRan=this.count
-        }
-        this.count=this.count-bodyNumRan;
-        console.log('this.count============='+this.count);
         var enemyComponent=enemy.getComponent('EnemyNode') 
         enemyComponent.speed=this.speed;
         enemyComponent.bodyNumRan=bodyNumRan;
@@ -82,7 +112,7 @@ cc.Class({
         if (this.dtTime>3 && this.count>=0)
         {
             this.dtTime=0;        
-            this.createEnemy(this.parentNode);          
+              
         }
      },
 
@@ -98,8 +128,12 @@ cc.Class({
         
             } 
         this.enemyList=[];
+        this.createEnemyData=[];
         this.scoreNum=0;
         this.isFight=false;
+    },
+    onDestroy(){
+        cc.director.GlobalEvent.off('enemyNode_destroy');
     }
     // update (dt) {},
 });
