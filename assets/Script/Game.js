@@ -44,7 +44,7 @@ cc.Class({
 
      onLoad () {
          this.scoreNum=0
-         this.parentNode=cc.find("Canvas");
+         this.parentNode=cc.find("Canvas/fightNode");
          cc.director.GlobalEvent.on('next_copy', function (event) {
             console.log("next_copy===================="+event.msg);//+event.detail.msg
             //cc.director.loadScene("Start");   

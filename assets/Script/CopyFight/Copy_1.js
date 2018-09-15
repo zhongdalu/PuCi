@@ -38,7 +38,7 @@ cc.Class({
             let enemy = cc.instantiate(this.enemyPrefab); // 创建节点
             this.enemyPool.put(enemy); // 通过 putInPool 接口放入对象池
         }
-       this.parentNode=cc.find("Canvas");
+       this.parentNode=cc.find("Canvas/fightNode");
     },
 
     begin:function(round){
@@ -96,11 +96,7 @@ cc.Class({
             } 
         this.enemyList=[];
         this.scoreNum=0;
-        this.scoreTxt.string=this.scoreNum;
         this.isFight=false;
-        console.log('this.scoreTxt==========='+this.scoreNum);
     }
-
-
     // update (dt) {},
 });

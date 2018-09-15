@@ -65,7 +65,7 @@ cc.Class({
              //开始实例化预制资源(这是个实例化是我自己理解的，可能说的不正确)
             var bullet = cc.instantiate(loadedResource);
             //将预制资源添加到父节点CanvasNode为画布canvas节点 是用cc.find()获得的对象
-            var CanvasNode=cc.find("Canvas");
+            var CanvasNode=cc.find("Canvas/fightNode");
             CanvasNode.addChild(bullet);     
             bullet.getComponent('Bullet').init(customEventData);     
         });
