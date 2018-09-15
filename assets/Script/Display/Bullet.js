@@ -28,7 +28,15 @@ cc.Class({
         // },
         type:0,
         pos:new cc.Vec2(),
-        speed:1000
+        speed:1000, 
+        color_1:{
+            default:new cc.Color(253,167,131),
+            type:cc.Color
+        },
+        color_2:{
+            default:new cc.Color(113,205,237),
+            type:cc.Color
+        },
     },
     
 
@@ -43,6 +51,13 @@ cc.Class({
     start () {
         this.node.position=this.pos;
         this.pos_y=this.node.y;
+        let color;
+        if(this.type==0){
+            color=this.color_2
+        }else{
+            color=this.color_1
+        }
+        this.node.color=color;
     },
 
      update (dt) {

@@ -108,6 +108,6 @@ cc.Class({
     },
     onDestroy()
     {
-        console.log("enemy destroy========");
+       
     }
 });

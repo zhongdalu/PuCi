@@ -65,7 +65,8 @@ cc.Class({
         console.log("bodyNumRan============="+bodyNumRan);
         for(var i=bodyNumRan-1;i>=0;i--)
         {     let enmy      
-            if(i>0){  let enemyBody = cc.instantiate(this.body);
+            if(i>0){  
+                let enemyBody = cc.instantiate(this.body);
                 this.bodyLinkedList.append(enemyBody);
                 enemyBody.parent = this.node; // 将生成的敌人加入节点树
                 var _type=Math.round(Math.random(0,1));
@@ -91,7 +92,7 @@ cc.Class({
         
     onDestroy()
     {
-        console.log("enemy destroy========");
+        
        
     }
 });

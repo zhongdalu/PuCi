@@ -87,6 +87,9 @@ cc.Class({
      },
 
     over:function(params) {
+        if(this.isFight==false){
+            return;
+         }
         for ( var i = 0,l = this.enemyList.length; i < l; i++ ){
             //这样的写法是最常见的。最好理解的，也是通用的，对于a,b这两种类型的(伪)数组都能够。
             var en=this.enemyList[i];

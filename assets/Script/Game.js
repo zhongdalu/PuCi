@@ -26,15 +26,11 @@ cc.Class({
         //         this._bar = value;
         //     }
         // },
-        score:{
-            default:null,
-            type:cc.Label
-        },
+    
         scoreTxt:{
             default:null,
             type:cc.Label
         },
-        text:"Score:",
         copyIndex:0,
         gameRound:1,
        
@@ -74,7 +70,6 @@ cc.Class({
 
     start () {
         this.scoreTxt.string='0';
-        this.score.string=this.text;  
         var copy=this.copyList[this.copyIndex];
         copy.begin(this.gameRound);
         this.copyCurrent=copy;
