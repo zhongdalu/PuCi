@@ -85,7 +85,7 @@ cc.Class({
     nextCopy:function(){
        this.copyIndex=this.copyIndex+1;
        let copyIndex=this.copyIndex%3;
-       this.gameRound=this.copyIndex/3;
+       this.gameRound=Math.ceil(this.copyIndex/3);
        for(var i=0;i<3;i++ ){
             if(i==copyIndex){
                 this.copyList[i].begin(this.gameRound);
