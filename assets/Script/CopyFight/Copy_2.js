@@ -99,7 +99,7 @@ cc.Class({
             enemy = cc.instantiate(this.enemyPrefab);
         }
         enemy.parent = parentNode; // 将生成的敌人加入节点树   
-        var enemyComponent=enemy.getComponent('EnemyNode') 
+        var enemyComponent=enemy.getComponent('EnemyNode_2') 
         enemyComponent.speed=this.speed;
         enemyComponent.bodyNumRan=bodyNumRan;
         this.enemyList.push(enemy);

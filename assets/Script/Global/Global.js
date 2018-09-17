@@ -1,3 +1,7 @@
+window.Global = {
+    enemyNode_destroy: 'enemyNode_destroy',
+    score_add: 'score_add',
+};
 //全局事件
 cc.director.GlobalEvent = {
     handles_: {},

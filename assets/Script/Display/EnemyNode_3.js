@@ -10,9 +10,9 @@
 var Bullet=require("Bullet");
 var LinkedList=require("LinkedList").LinkedList;
 var copyData;//require("CopyData").CopyData;
+var base=require('EnemyNodeBase');
 cc.Class({
-    extends: cc.Component,
-
+    extends: base,
     properties: {
         // foo: {
         //     // ATTRIBUTES:
@@ -21,44 +21,8 @@ cc.Class({
         //     type: cc.SpriteFrame, // optional, default is typeof default
         //     serializable: true,   // optional, default is true
         // },
-        bodyNumMin: {
-            get () {
-                return this._bodyNumMin;
-            },
-            set (value) {
-                this._bodyNumMin = value;
-            }
-        },  
-        bodyNumMax: {
-            get () {
-                return this._bodyNumMax;
-            },
-            set (value) {
-                this._bodyNumMax = value;
-            }
-        },  
-        bodyNumRan:0,
-        speed:100, 
-        head:{
-            default:null,
-            type:cc.Prefab,
-        },
-        body:{
-            default:null,
-            type:cc.Prefab,
-        },
-        pos_y:600,
     },
-
-    // LIFE-CYCLE CALLBACKS:
-
-     onLoad () {
-         
-         
-     },
-
-    start () {
-        copyData=window.CopyData;
+    start(){
         this.count=1;
         this.bodyLinkedList=new LinkedList();
         var bodyNumRan=this.bodyNumRan;//rand(this.bodyNumMin,this.bodyNumMax);
@@ -88,18 +52,10 @@ cc.Class({
             enmy.SetPosY((i-1)*40); 
            // body;
         } 
-       
     },
 
-     update (dt) {
+   update (dt) {
         this.pos_y=this.pos_y-dt*this.speed;
-        this.node.y=this.pos_y;
+        this.node.y=this.pos_y; 
      },
-        
-    onDestroy()
-    {
-        cc.director.GlobalEvent.emit('enemyNode_destroy', {
-        });
-           
-    }
 });
