@@ -2,8 +2,8 @@
   "__type__": "cc.AnimationClip",
   "_name": "startPlay",
   "_objFlags": 0,
-  "_rawFiles": null,
-  "_duration": 8.016666666666667,
+  "_native": "",
+  "_duration": 128,
   "sample": 60,
   "speed": 1,
   "wrapMode": "2",
@@ -17,8 +17,8 @@
               "value": 0
             },
             {
-              "frame": 8.016666666666667,
-              "value": 360
+              "frame": 128,
+              "value": 5760
             }
           ]
         }
@@ -36,8 +36,8 @@
               "value": 0
             },
             {
-              "frame": 8,
-              "value": -360
+              "frame": 128,
+              "value": -2880
             }
           ]
         }
@@ -64,8 +64,8 @@
               "value": 0
             },
             {
-              "frame": 8,
-              "value": 360
+              "frame": 128,
+              "value": 1440
             }
           ]
         }
@@ -78,8 +78,8 @@
               "value": 0
             },
             {
-              "frame": 8.016666666666667,
-              "value": -360
+              "frame": 128,
+              "value": -720
             }
           ]
         }
@@ -92,7 +92,7 @@
               "value": 0
             },
             {
-              "frame": 7.966666666666667,
+              "frame": 128,
               "value": 360
             }
           ]
