@@ -22,9 +22,6 @@ cc.Class({
         //     serializable: true,   // optional, default is true
         // },
     },
-    start(){
-       
-    },
 
    update (dt) {   
         this.pos_y=this.pos_y-dt*this.speed;
