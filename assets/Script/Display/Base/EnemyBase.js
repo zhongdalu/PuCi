@@ -32,14 +32,6 @@ cc.Class({
         // },
         type:0,
         count:1,
-        color_1:{
-            default:new cc.Color(253,167,131),
-            type:cc.Color
-        },
-        color_2:{
-            default:new cc.Color(113,205,237),
-            type:cc.Color
-        },
         destroyEffect:{
             default:null,
             type:cc.Prefab
@@ -69,14 +61,6 @@ cc.Class({
     init:function(_type,_callback){
         this.callback=_callback;
         this.type=_type;
-        if (this.type==1)
-        {
-            this.node.color=this.color_1;//new cc.color(0,0,0,255);
-        }else
-        {
-            this.node.color=this.color_2;
-        }
-
      },
      onCollisionEnter: function (other, self) {
          var bullet=other.getComponent("Bullet");

@@ -87,7 +87,7 @@ cc.Class({
         this.createEnemy(data);
         this.scheduleOnce(function() {
             this.yieldFunction(index+1);
-        }, data*(1/(this.speed/100)))
+        }, data*(2/(this.speed/100)))
     },
 
     createEnemy: function (bodyNumRan) {

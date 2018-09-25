@@ -12,7 +12,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "enemy",
+    "_name": "enemy_1",
     "_objFlags": 0,
     "_parent": null,
     "_children": [],
@@ -79,14 +79,17 @@
       "__id__": 1
     },
     "_enabled": true,
+    "bodyNumRan": 0,
     "speed": 100,
-    "head": {
-      "__uuid__": "1e2773a5-33c8-4648-82ff-ffdfc9fe0031"
+    "body_1": {
+      "__uuid__": "7f492199-3b64-4885-b6a2-4fb4ad22c60a"
     },
-    "body": {
-      "__uuid__": "0ce5a5cb-53c3-4f20-825a-072a6ed352fa"
+    "body_2": {
+      "__uuid__": "37b423aa-975e-473f-8493-8625e30a22e4"
     },
-    "_id": "ee8BuGc5NM/rHkgvsbeauM"
+    "pos_y": 600,
+    "direct": 1,
+    "_id": "bajfYEEBlEqJ3KoELAs26f"
   },
   {
     "__type__": "cc.PrefabInfo",

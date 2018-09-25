@@ -22,11 +22,11 @@ cc.Class({
         // },
         bodyNumRan:0,
         speed:100, 
-        head:{
+        body_1:{
             default:null,
             type:cc.Prefab,
         },
-        body:{
+        body_2:{
             default:null,
             type:cc.Prefab,
         },
@@ -46,16 +46,15 @@ cc.Class({
         this.bodyLinkedList=new LinkedList();
         var bodyNumRan=this.bodyNumRan;//rand(this.bodyNumMin,this.bodyNumMax);
         for(var i=bodyNumRan;i>0;i--){    
-            let enmy      
-            if(i>1){  
-                let enemyBody = cc.instantiate(this.body);
+            let enmy  
+            var _type=Math.round(Math.random(0,1))
+            if(_type==0){  
+                let enemyBody = cc.instantiate(this.body_1);
                 this.bodyLinkedList.append(enemyBody);
                 enemyBody.parent = this.node; // 将生成的敌人加入节点树
-                var _type=Math.round(Math.random(0,1));
                 enmy=enemyBody.getComponent('Enemy')      
             }else{
-                let enemyHead= cc.instantiate(this.head);
-                var _type=Math.round(Math.random(0,1));
+                let enemyHead= cc.instantiate(this.body_2);
                 enemyHead.parent=this.node;
                 enmy=enemyHead.getComponent('Enemy');//接下来就可以调用 enemy 身上的脚本进行初始   
               
@@ -68,7 +67,7 @@ cc.Class({
                  callback=callback.bind(this);               
             }
             enmy.init(_type,callback);//接下来就可以调用 enemy 身上的脚本进行初始  
-            enmy.SetPosY((i-1)*40); 
+            enmy.SetPosY((i-1)*enmy.node.height); 
            // body;
         } 
     },
