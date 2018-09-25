@@ -22,40 +22,9 @@ cc.Class({
         //     serializable: true,   // optional, default is true
         // },
     },
-    start(){
-        this.count=1;
-        this.bodyLinkedList=new LinkedList();
-        var bodyNumRan=this.bodyNumRan;//rand(this.bodyNumMin,this.bodyNumMax);
-        for(var i=bodyNumRan;i>0;i--){    
-            let enmy      
-            if(i>1){  
-                let enemyBody = cc.instantiate(this.body);
-                this.bodyLinkedList.append(enemyBody);
-                enemyBody.parent = this.node; // 将生成的敌人加入节点树
-                var _type=Math.round(Math.random(0,1));
-                enmy=enemyBody.getComponent('Enemy')      
-            }else{
-                let enemyHead= cc.instantiate(this.head);
-                var _type=Math.round(Math.random(0,1));
-                enemyHead.parent=this.node;
-                enmy=enemyHead.getComponent('Enemy');//接下来就可以调用 enemy 身上的脚本进行初始   
-              
-            }
-            let callback;
-            if (i==bodyNumRan){ 
-                callback=function(){
-                     this.node.destroy();
-                 };
-                 callback=callback.bind(this);               
-            }
-            enmy.init(_type,callback);//接下来就可以调用 enemy 身上的脚本进行初始  
-            enmy.SetPosY((i-1)*40); 
-           // body;
-        } 
-    },
-
-   update (dt) {
+   
+    update (dt) {   
         this.pos_y=this.pos_y-dt*this.speed;
-        this.node.y=this.pos_y; 
+        this.node.y=this.pos_y;   
      },
 });
