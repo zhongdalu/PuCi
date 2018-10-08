@@ -1,0 +1,86 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "boss_1",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 4,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": "2",
+  "curveData": {
+    "props": {
+      "position": [
+        {
+          "frame": 0,
+          "value": [
+            0,
+            450
+          ]
+        },
+        {
+          "frame": 1,
+          "value": [
+            -84,
+            450
+          ]
+        },
+        {
+          "frame": 3,
+          "value": [
+            84,
+            450
+          ]
+        },
+        {
+          "frame": 4,
+          "value": [
+            0,
+            450
+          ]
+        }
+      ]
+    },
+    "paths": {
+      "boss_body/boss_cavity": {
+        "props": {
+          "width": []
+        }
+      },
+      "boss_body/boss_cavity/boss_mouth": {
+        "props": {
+          "height": [
+            {
+              "frame": 0,
+              "value": 52
+            },
+            {
+              "frame": 0.6666666666666666,
+              "value": 63.8
+            },
+            {
+              "frame": 1.3333333333333333,
+              "value": 52
+            },
+            {
+              "frame": 2,
+              "value": 63.8
+            },
+            {
+              "frame": 2.6666666666666665,
+              "value": 52
+            },
+            {
+              "frame": 3.3333333333333335,
+              "value": 63.8
+            },
+            {
+              "frame": 4,
+              "value": 52
+            }
+          ]
+        }
+      }
+    }
+  },
+  "events": []
+}
