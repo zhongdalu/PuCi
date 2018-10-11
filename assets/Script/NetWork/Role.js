@@ -1,6 +1,6 @@
 var Role= {
-    name:'abc',
-    uid:'abc123',
+    name:'abc11',
+    uid:'abc123456',
     touxiangurl:'',
 	score:0,
 };

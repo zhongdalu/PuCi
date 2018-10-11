@@ -1,9 +1,9 @@
 var WebSocket=function(){
     this.Role=null;
-    this.serverIp ="10.1.10.85";
+    this.serverIp ="47.93.39.12";
     this.serverPort ="3014";
 }
-WebSocket.prototype.enter= function(Role) {
+WebSocket.prototype.enter= function(Role,cb) {
 
     pomelo.on('disconnect', function(reason) {
         cc.log("pomelo.on() disconnect: ", reason);
@@ -32,7 +32,7 @@ WebSocket.prototype.enter= function(Role) {
                     cc.log("pomelo.request return error");
                     return; 
                 }
-                that.login();
+                that.login(cb);
             });
         });
     });
@@ -58,7 +58,7 @@ WebSocket.prototype.queryEntry= function(uid, callback) {
         });
     });
 }
-WebSocket.prototype.login=function()
+WebSocket.prototype.login=function(cb)
 {
     var that=this;
     var route = "game.gameHandler.login";
@@ -71,11 +71,14 @@ WebSocket.prototype.login=function()
             cc.log("pomelo.request return error");
             return; 
         }
+        if(cb){
+            cb();    
+        }
 
     });
 }
 //命令 args 是数组类型
-WebSocket.prototype.command=function(cmd,args)
+WebSocket.prototype.command=function(cmd,args,cb)
 {
     var route = "game.gameHandler.command";
     pomelo.request(route, {
@@ -85,6 +88,9 @@ WebSocket.prototype.command=function(cmd,args)
         cc.log(data);
         if(data.error) {
             return; 
+        }
+        if(cb){
+            cb(data);
         }
     });
 }

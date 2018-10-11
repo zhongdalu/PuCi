@@ -15,6 +15,7 @@ window.CopyData=
     "copy_3":{'count':3,"speed":100, "num_min":2,"num_max":5,'score':20},          
     
 }
+
 // module.exports={
 //     CopyData:CopyData,
 // };

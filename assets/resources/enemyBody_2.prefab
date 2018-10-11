@@ -59,7 +59,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 100,
-      "height": 100
+      "height": 130
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -248,7 +248,7 @@
     "_isTrimmedMode": true,
     "_state": 0,
     "_atlas": null,
-    "_id": "27/2Fv8LxMW787mQ7FnVVR"
+    "_id": "31Md6sbsdA8LMLfgxo9e4l"
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -350,7 +350,7 @@
     "_isTrimmedMode": true,
     "_state": 0,
     "_atlas": null,
-    "_id": "7bs4VCWAFKuZLBUch6BK+z"
+    "_id": "04iquST7VLwrQnpcDkmxID"
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -463,7 +463,7 @@
     "_isTrimmedMode": true,
     "_state": 0,
     "_atlas": null,
-    "_id": "8at3WTOIlA6IpMUQumyzwC"
+    "_id": "9fVvqVJnRByrK7dsuDAU58"
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -632,7 +632,7 @@
     "_isTrimmedMode": true,
     "_state": 0,
     "_atlas": null,
-    "_id": "f6dE2tGJ5FV5GihuMHdtuO"
+    "_id": "b5sQo20kNInL3K1rwE1kSi"
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -671,7 +671,7 @@
     "_isTrimmedMode": true,
     "_state": 0,
     "_atlas": null,
-    "_id": "c4a7ADSjxCXJVxgGmuwdbx"
+    "_id": "7fFGbyQqBL+q+V18U7/cET"
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -840,7 +840,7 @@
     "_isTrimmedMode": true,
     "_state": 0,
     "_atlas": null,
-    "_id": "53HcdzX0JNyJnczsGW//EM"
+    "_id": "55XGrnBD1KvrEKWz8JKPYm"
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -879,7 +879,7 @@
     "_isTrimmedMode": true,
     "_state": 0,
     "_atlas": null,
-    "_id": "da1rCINBFHeLcthgzVfmzT"
+    "_id": "39NFXyAQVB94DLz0Fb/7Ec"
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -916,7 +916,7 @@
     "_isTrimmedMode": true,
     "_state": 0,
     "_atlas": null,
-    "_id": "d0xEVJqsxK9awUe2dJvUCu"
+    "_id": "acg/JeSTpCKYur9Yu7oMs/"
   },
   {
     "__type__": "cc.CircleCollider",
@@ -933,7 +933,7 @@
       "y": 5
     },
     "_radius": 55,
-    "_id": "8bQWxHlkRBD5mQ06+Hd5oW"
+    "_id": "aejOn+SBVBFrJI9f/nGrd9"
   },
   {
     "__type__": "cc.Animation",
@@ -952,7 +952,7 @@
       }
     ],
     "playOnLoad": true,
-    "_id": "79DDny/QFCsaQ2QwGSg1sO"
+    "_id": "27M25jrI1N0JD5SSzdcZYK"
   },
   {
     "__type__": "c47dbNh4mhFXYBvyZmERSzN",
@@ -967,7 +967,7 @@
     "destroyEffect": {
       "__uuid__": "678d0e92-9d80-4e90-b35e-4d0eff4e6bd6"
     },
-    "_id": "87BoshnqlDCKnRxo47A7DB"
+    "_id": "c3SAW6gc1CGrUqd4dtwtLV"
   },
   {
     "__type__": "cc.PrefabInfo",
