@@ -23,6 +23,14 @@ cc.Class({
         // },
         pos_x:0,
         y_offset:150,
+        body_1:{
+            default:null,
+            type:cc.Prefab,
+        },
+        body_2:{
+            default:null,
+            type:cc.Prefab,
+        },
     },
     onLoad(){
        this.fsg=0; 
@@ -74,10 +82,10 @@ cc.Class({
 
    update (dt) {
         this.node.y=this.pos_y-this.y_offset*this.fsg;
-        if (this.pos_x>500){
+        if (this.pos_x>700){
             this.moveFlag=true  
             this.fsg=this.fsg+1;     
-        }else if(this.pos_x<-500){
+        }else if(this.pos_x<-700){
             this.moveFlag=false 
             this.fsg=this.fsg+1;    
         };

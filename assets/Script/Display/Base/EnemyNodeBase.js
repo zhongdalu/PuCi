@@ -24,18 +24,7 @@ cc.Class({
         speed:100, 
         pos_y:600,
         direct:1,
-        body_1:{
-            default:null,
-            type:cc.Prefab,
-        },
-        body_2:{
-            default:null,
-            type:cc.Prefab,
-        },
-        destroyEffect:{
-            default:null,
-            type:cc.Prefab
-        },
+      
     },
 
     // LIFE-CYCLE CALLBACKS:

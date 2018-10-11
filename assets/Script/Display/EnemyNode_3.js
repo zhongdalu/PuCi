@@ -21,6 +21,14 @@ cc.Class({
         //     type: cc.SpriteFrame, // optional, default is typeof default
         //     serializable: true,   // optional, default is true
         // },
+        body_1:{
+            default:null,
+            type:cc.Prefab,
+        },
+        body_2:{
+            default:null,
+            type:cc.Prefab,
+        },
     },
     start () {
         this.count=1;

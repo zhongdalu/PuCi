@@ -52,7 +52,6 @@ cc.Class({
     
     start () {
         this.node.y=this.pos_y;
-        this.count=1;     
     },
 
     update (dt) {
@@ -75,13 +74,19 @@ cc.Class({
             this.count=this.count-1;
         }
         if(this.count==0){       
-            var  pos_x=this.node.x+this.node.parent.x;   
-            var  pos_y=this.node.y+this.node.parent.y;  
+            var  pos_x=this.node.x;//+this.node.parent.x;   
+            var  pos_y=this.node.y;//+this.node.parent.y;  
             cc.director.GlobalEvent.emit('score_add', {
                 msg:1,
                 position:{x:pos_x,y:pos_y},
                 effect:this.destroyEffect
               });
+              var effect=cc.instantiate(this.destroyEffect);
+              this.node.parent.addChild(effect); 
+              effect.x=pos_x;   
+              effect.y=pos_y;     
+              var ani=effect.getComponent(cc.Animation);
+              ani.play('monsterDie');
               if(this.callback){
                   this.callback()
               }

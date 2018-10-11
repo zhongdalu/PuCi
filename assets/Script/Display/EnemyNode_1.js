@@ -21,6 +21,14 @@ cc.Class({
         //     type: cc.SpriteFrame, // optional, default is typeof default
         //     serializable: true,   // optional, default is true
         // },
+        body_1:{
+            default:null,
+            type:cc.Prefab,
+        },
+        body_2:{
+            default:null,
+            type:cc.Prefab,
+        },
     },
     start () {
         this.count=1;
@@ -43,7 +51,9 @@ cc.Class({
             let callback;
             if (i==bodyNumRan){ 
                 callback=function(){
-                     this.node.destroy();
+                    this.scheduleOnce(function() {
+                        this.node.destroy();
+                    },1)
                  };
                  callback=callback.bind(this);               
             }
