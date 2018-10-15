@@ -54,12 +54,12 @@ cc.Class({
             this.gameOver();
           },this);
           cc.director.GlobalEvent.on('score_add', function (event) {    
-            var effect=cc.instantiate(event.effect);
-            this.parentNode.addChild(effect); 
-            effect.x=event.position.x;   
-            effect.y=event.position.y;     
-            var ani=effect.getComponent(cc.Animation);
-            ani.play('monsterDie');
+            // var effect=cc.instantiate(event.effect);
+            // this.parentNode.addChild(effect); 
+            // effect.x=event.position.x;   
+            // effect.y=event.position.y;     
+            // var ani=effect.getComponent(cc.Animation);
+            // ani.play('monsterDie');
             this.scoreNum=this.scoreNum+event.msg;
             this.scoreTxt.string=this.scoreNum;
           },this);

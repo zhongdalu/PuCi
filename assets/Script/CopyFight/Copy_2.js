@@ -59,7 +59,6 @@ cc.Class({
         this.expressions=Expressions.getInstance(1);
         this.expressions.setRound(this.gameRound);
         this.count=this.expressions.getScore();
-        console.log('this.count_totle============='+this.count);
         this.speed=this.expressions.getSpeed();
         this.num_min=this.expressions.getNumMin();
         this.num_max=this.expressions.getNumMax();

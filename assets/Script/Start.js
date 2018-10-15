@@ -8,6 +8,7 @@
 //  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
 //  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/life-cycle-callbacks.html
 require ("Global");
+require("Config");
 require("Utils");
 cc.Class({
     extends: cc.Component,
@@ -40,7 +41,20 @@ cc.Class({
 
      onLoad () {
 
-       
+        window.NetWork.enter(window.Role);
+        // window.NetWork.command('A01',[600000],function(data){
+        //     console.error("data.code============="+data.code);
+            
+        //     switch (data.code) {
+        //         case 1:
+                    
+        //         break;
+            
+        //         default:
+        //             break;
+        //     }
+
+        // });
      },
 
     start () {
