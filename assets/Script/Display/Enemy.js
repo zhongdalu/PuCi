@@ -76,7 +76,7 @@ cc.Class({
         if(this.count==0){       
             var  pos_x=this.node.x;//+this.node.parent.x;   
             var  pos_y=this.node.y;//+this.node.parent.y;  
-            cc.director.GlobalEvent.emit('score_add', {
+            cc.director.GlobalEvent.emit(window.Flags.score_add, {
                 msg:1,
                 position:{x:pos_x,y:pos_y},
                 effect:this.destroyEffect
@@ -99,8 +99,6 @@ cc.Class({
     },
     onDestroy()
     {
-       console.log('===========================');
-       
        
     }
 });

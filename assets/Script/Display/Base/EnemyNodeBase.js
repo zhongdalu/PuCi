@@ -31,7 +31,6 @@ cc.Class({
 
      onLoad () {
          
-         
      },
 
     start () {
@@ -44,7 +43,7 @@ cc.Class({
         
     onDestroy()
     {
-        cc.director.GlobalEvent.emit('enemyNode_destroy', {
+        cc.director.GlobalEvent.emit(window.Flags.enemyNode_destroy, {
         });
            
     }

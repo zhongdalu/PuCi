@@ -12,7 +12,7 @@ var LinkedList=require("LinkedList").LinkedList;
 var copyData;//require("CopyData").CopyData;
 var base=require('EnemyNodeBase');
 cc.Class({
-    extends: base,
+    extends: cc.Component,
     properties: {
         // foo: {
         //     // ATTRIBUTES:
@@ -21,6 +21,10 @@ cc.Class({
         //     type: cc.SpriteFrame, // optional, default is typeof default
         //     serializable: true,   // optional, default is true
         // },
+        bodyNumRan:0,
+        speed:100, 
+        pos_y:600,
+        direct:1,
         body_1:{
             default:null,
             type:cc.Prefab,
@@ -34,6 +38,18 @@ cc.Class({
         this.count=1;
         this.bodyLinkedList=new LinkedList();
         var bodyNumRan=this.bodyNumRan;//rand(this.bodyNumMin,this.bodyNumMax);
+        this.killNum=0;
+        cc.director.GlobalEvent.on(window.Flags.score_add, function (event) {    
+            this.killNum=this.killNum+event.msg;
+            if (this.killNum==bodyNumRan) {
+                 this.scheduleOnce(function() {
+                    this.node.destroy();
+                 },1)
+                cc.director.GlobalEvent.emit(window.Flags.enemyNode_destroy, {
+                });
+                
+            }
+          },this);
         for(var i=bodyNumRan;i>0;i--){    
             let enmy  
             var _type=Math.round(Math.random(0,1))
@@ -48,15 +64,7 @@ cc.Class({
                 enmy=enemyHead.getComponent('Enemy');//接下来就可以调用 enemy 身上的脚本进行初始   
               
             }
-            let callback;
-            if (i==bodyNumRan){ 
-                callback=function(){
-                    this.scheduleOnce(function() {
-                        this.node.destroy();
-                    },1)
-                 };
-                 callback=callback.bind(this);               
-            }
+            let callback=null;
             enmy.init(_type,callback);//接下来就可以调用 enemy 身上的脚本进行初始  
             enmy.SetPosY((i-1)*enmy.node.height); 
            // body;
@@ -66,4 +74,8 @@ cc.Class({
         this.pos_y=this.pos_y-dt*this.speed;
         this.node.y=this.pos_y;   
      },
+     onDestroy()
+     {
+        cc.director.GlobalEvent.off(window.Flags.score_add,this);    
+     }
 });

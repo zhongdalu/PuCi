@@ -10,6 +10,7 @@
 require ("Global");
 require("Config");
 require("Utils");
+require("Flags");
 cc.Class({
     extends: cc.Component,
     

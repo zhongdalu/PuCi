@@ -1,7 +1,3 @@
-window.Global = {
-    enemyNode_destroy: 'enemyNode_destroy',
-    score_add: 'score_add',
-};
 window.Role = require("Role");
 window.NetWork = require("NetWork");
 //全局事件
@@ -10,13 +6,10 @@ cc.director.GlobalEvent = {
     //发送事件
     emit: function (eventName, data) {
         var returns = [] //返回值
-
         data.eventName = eventName//保存一下事件名字
-
         for ( var findEvenName in this.handles_ ){
             if (findEvenName == eventName) {
-                for (var i = 0; i < this.handles_[findEvenName].length; i++) {
-                    console.log('eventName================='+eventName);
+                for (var i = 0; i < this.handles_[findEvenName].length; i++) {         
                     if (this.handles_[findEvenName][i]==null) continue;
                     var returnValue = this.handles_[findEvenName][i](data)
                     returns.push(returnValue)
@@ -30,15 +23,20 @@ cc.director.GlobalEvent = {
     on: function (eventName, callback, target) {
         // console.log('收到事件', eventName);
         this.handles_[eventName] = this.handles_[eventName] || []
-
         this.handles_[eventName].push(callback.bind(target))
     },
     //通过事件名和target移除一个监听器
-    off: function (eventName) {
-        if(this.handles_[eventName]){
+    off: function (eventName,target) {
+        if(this.handles_[eventName]){    
             for (var i = 0; i < this.handles_[eventName].length; i++) {
-                this.handles_[eventName][i] = null
-            }
+                if (target==null) {
+                    this.handles_[eventName][i] = null
+                }else{
+                    if(this.handles_[eventName][i].bind==target){
+                        this.handles_[eventName][i] = null
+                    }
+                }
+            }       
         }
         
     },

@@ -29,13 +29,13 @@ cc.Class({
         gameRound:1
     },
     onLoad(){
-        cc.director.GlobalEvent.on('enemyNode_destroy', function (event) {
+        cc.director.GlobalEvent.on(window.Flags.enemyNode_destroy, function (event) {
             if (this.isFight==false) return;
             this.createEnemyData.pop()
             if (this.createEnemyData.length==0)
             {
                 console.log("nextCopy====================");//+event.detail.msg
-                cc.director.GlobalEvent.emit('next_copy', {
+                cc.director.GlobalEvent.emit(window.Flags.next_copy, {
                 });
             }
           },this);
@@ -133,7 +133,7 @@ cc.Class({
         this.isFight=false;
     },
     onDestroy(){
-        cc.director.GlobalEvent.off('enemyNode_destroy');
+        cc.director.GlobalEvent.off(window.Flags.enemyNode_destroy);
     }
     // update (dt) {},
 });

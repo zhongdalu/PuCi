@@ -41,8 +41,7 @@ cc.Class({
      onLoad () {
          this.scoreNum=0
          this.parentNode=cc.find("Canvas/fightNode");
-         cc.director.GlobalEvent.on('next_copy', function (event) {
-            console.log("next_copy===================="+event.msg);//+event.detail.msg
+         cc.director.GlobalEvent.on(window.Flags.next_copy, function (event) {
             //cc.director.loadScene("Start");  
             this.scheduleOnce(function() {
                 this.nextCopy();
@@ -53,13 +52,7 @@ cc.Class({
             //cc.director.loadScene("Start");   
             this.gameOver();
           },this);
-          cc.director.GlobalEvent.on('score_add', function (event) {    
-            // var effect=cc.instantiate(event.effect);
-            // this.parentNode.addChild(effect); 
-            // effect.x=event.position.x;   
-            // effect.y=event.position.y;     
-            // var ani=effect.getComponent(cc.Animation);
-            // ani.play('monsterDie');
+          cc.director.GlobalEvent.on(window.Flags.score_add, function (event) {    
             this.scoreNum=this.scoreNum+event.msg;
             this.scoreTxt.string=this.scoreNum;
           },this);
@@ -74,9 +67,9 @@ cc.Class({
     },
     
      onDestroy(){
-        cc.director.GlobalEvent.off('next_copy');
+        cc.director.GlobalEvent.off(window.Flags.next_copy);
         cc.director.GlobalEvent.off('game_over');
-        cc.director.GlobalEvent.off('score_add');
+        cc.director.GlobalEvent.off(window.Flags.score_add);
         
     },
     gameOver:function(){

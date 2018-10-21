@@ -12,7 +12,7 @@ var LinkedList=require("LinkedList").LinkedList;
 var copyData;//require("CopyData").CopyData;
 var base=require('EnemyNodeBase');
 cc.Class({
-    extends: base,
+    extends: cc.Component,
     properties: {
         // foo: {
         //     // ATTRIBUTES:
@@ -29,6 +29,10 @@ cc.Class({
             default:null,
             type:cc.Prefab,
         },
+        bodyNumRan:0,
+        speed:100, 
+        pos_y:600,
+        direct:1,
     },
     start () {
         this.count=1;
@@ -64,4 +68,11 @@ cc.Class({
         this.pos_y=this.pos_y-dt*this.speed;
         this.node.y=this.pos_y;   
      },
+     onDestroy()
+     {
+        cc.director.GlobalEvent.off(window.Flags.score_add,this);
+         cc.director.GlobalEvent.emit(window.Flags.enemyNode_destroy, {
+         });
+            
+     }
 });
