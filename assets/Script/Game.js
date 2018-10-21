@@ -47,8 +47,8 @@ cc.Class({
                 this.nextCopy();
             }, 3) 
           },this);
-          cc.director.GlobalEvent.on('game_over', function (event) {
-            console.log("game_over===================="+event.msg);//+event.detail.msg
+          cc.director.GlobalEvent.on(window.Flags.game_over, function (event) {
+            console.log("window.Flags.game_over===================="+event.msg);//+event.detail.msg
             //cc.director.loadScene("Start");   
             this.gameOver();
           },this);
@@ -68,7 +68,7 @@ cc.Class({
     
      onDestroy(){
         cc.director.GlobalEvent.off(window.Flags.next_copy);
-        cc.director.GlobalEvent.off('game_over');
+        cc.director.GlobalEvent.off(window.Flags.game_over);
         cc.director.GlobalEvent.off(window.Flags.score_add);
         
     },
@@ -79,8 +79,10 @@ cc.Class({
        this.copyIndex=this.copyIndex+1;
        let copyIndex=this.copyIndex%3;
        this.gameRound=Math.ceil(this.copyIndex/3);
+       console.error("next copy!");
        for(var i=0;i<3;i++ ){
             if(i==copyIndex){
+                console.error("next copy====="+this.gameRound+"=============="+i);
                 this.copyList[i].begin(this.gameRound);
                 this.copyCurrent=this.copyList[i];
             }else{

@@ -11,6 +11,11 @@
 var rands =function (min,max) {
     return Math.round(Math.random()*(max-min))+min
 };
+var IsNull=function(obj){
+    var bl=true
+    console.log("obj.isValid========"+obj.isValid)
+    return obj==null || !obj.isValid
+}
 
 module.exports=
 {
@@ -18,4 +23,5 @@ module.exports=
 }
 window.utils={
     rand:rands,
+    IsNull:IsNull,
 };

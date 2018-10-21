@@ -52,6 +52,7 @@ cc.Class({
     
     start () {
         this.node.y=this.pos_y;
+        this.node.x=this.pos_x ||0;
     },
 
     update (dt) {
@@ -68,11 +69,15 @@ cc.Class({
              return;
          }
         var  other_type=bullet.type;
-        if(other_type!=this.type){
-            this.count=this.count+1;
+        if (this.type>=0) {
+            if(other_type!=this.type){
+                this.count=this.count+1;
+            }else{
+                this.count=this.count-1;
+            }
         }else{
             this.count=this.count-1;
-        }
+        } 
         if(this.count==0){       
             var  pos_x=this.node.x;//+this.node.parent.x;   
             var  pos_y=this.node.y;//+this.node.parent.y;  

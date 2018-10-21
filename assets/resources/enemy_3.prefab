@@ -79,17 +79,14 @@
       "__id__": 1
     },
     "_enabled": true,
+    "body": {
+      "__uuid__": "a8e5a6d7-e23d-4058-a188-d910237df220"
+    },
     "bodyNumRan": 0,
     "speed": 100,
-    "body_1": {
-      "__uuid__": "7f492199-3b64-4885-b6a2-4fb4ad22c60a"
-    },
-    "body_2": {
-      "__uuid__": "37b423aa-975e-473f-8493-8625e30a22e4"
-    },
     "pos_y": 600,
     "direct": 1,
-    "_id": "9bILESiINKlq5CKttzn6om"
+    "_id": "5fJgJvYsdJcJqB7p64IR+l"
   },
   {
     "__type__": "cc.PrefabInfo",

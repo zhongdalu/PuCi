@@ -71,7 +71,7 @@ cc.Class({
         });
     },
     onCollisionEnter: function (other, self) {         
-          cc.director.GlobalEvent.emit('game_over', {
+          cc.director.GlobalEvent.emit(window.Flags.game_over, {
           });
     },
     onDestroy(){

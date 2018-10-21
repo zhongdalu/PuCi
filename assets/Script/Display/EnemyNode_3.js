@@ -21,58 +21,52 @@ cc.Class({
         //     type: cc.SpriteFrame, // optional, default is typeof default
         //     serializable: true,   // optional, default is true
         // },
-        body_1:{
+        body:{
             default:null,
             type:cc.Prefab,
         },
-        body_2:{
-            default:null,
-            type:cc.Prefab,
-        },
-        bodyNumRan:0,
-        speed:100, 
-        pos_y:600,
-        direct:1,
+        pos:{default:[],type:cc.Vec2},
     },
     start () {
         this.count=1;
         this.bodyLinkedList=new LinkedList();
-        var bodyNumRan=this.bodyNumRan;//rand(this.bodyNumMin,this.bodyNumMax);
+        var bodyNumRan=1
+        this.killNum=0;
+        this.node.x= 0;//window.innerWidth/2;
+        this.node.y= window.innerHeight/2;
+        console.error("window.innerWidth========"+window.innerWidth);
+        console.error("window.windowSize========"+window.windowSize);
+        
+        cc.director.GlobalEvent.on(window.Flags.score_add, function (event) {    
+            this.killNum=this.killNum+event.msg;
+            if (this.killNum==bodyNumRan) {
+                 this.scheduleOnce(function() {
+                    this.node.destroy();
+                 },1)
+                cc.director.GlobalEvent.emit(window.Flags.enemyNode_destroy, {
+                });
+                
+            }
+          },this);
         for(var i=bodyNumRan;i>0;i--){    
-            let enmy  
-            var _type=Math.round(Math.random(0,1))
-            if(_type==0){  
-                let enemyBody = cc.instantiate(this.body_1);
-                this.bodyLinkedList.append(enemyBody);
-                enemyBody.parent = this.node; // 将生成的敌人加入节点树
-                enmy=enemyBody.getComponent('Enemy')      
-            }else{
-                let enemyHead= cc.instantiate(this.body_2);
-                enemyHead.parent=this.node;
-                enmy=enemyHead.getComponent('Enemy');//接下来就可以调用 enemy 身上的脚本进行初始   
-              
-            }
+            let enmy;  
+            let enemyBody = cc.instantiate(this.body);
+            this.bodyLinkedList.append(enemyBody);
+            enemyBody.parent = this.node; // 将生成的敌人加入节点树
+            enmy=enemyBody.getComponent('Enemy')      
             let callback;
-            if (i==bodyNumRan){ 
-                callback=function(){
-                     this.node.destroy();
-                 };
-                 callback=callback.bind(this);               
-            }
+            enmy.count=10;
+            let _type=-1;
             enmy.init(_type,callback);//接下来就可以调用 enemy 身上的脚本进行初始  
             enmy.SetPosY((i-1)*enmy.node.height); 
            // body;
         } 
     },
     update (dt) {   
-        this.pos_y=this.pos_y-dt*this.speed;
-        this.node.y=this.pos_y;   
+       
      },
      onDestroy()
      {
         cc.director.GlobalEvent.off(window.Flags.score_add,this);
-         cc.director.GlobalEvent.emit(window.Flags.enemyNode_destroy, {
-         });
-            
      }
 });

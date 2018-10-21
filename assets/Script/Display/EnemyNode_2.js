@@ -23,6 +23,7 @@ cc.Class({
         // },
         bodyNumRan:0,
         speed:100, 
+        pos_y:600,
         direct:1,
         pos_x:0,
         y_offset:150,
@@ -56,6 +57,18 @@ cc.Class({
         this.count=1;
         this.bodyLinkedList=new LinkedList();
         var bodyNumRan=this.bodyNumRan;//rand(this.bodyNumMin,this.bodyNumMax);
+        this.killNum=0;
+        cc.director.GlobalEvent.on(window.Flags.score_add, function (event) {    
+            this.killNum=this.killNum+event.msg;
+            if (this.killNum==bodyNumRan) {
+                 this.scheduleOnce(function() {
+                    this.node.destroy();
+                 },1)
+                cc.director.GlobalEvent.emit(window.Flags.enemyNode_destroy, {
+                });
+                
+            }
+          },this);
         for(var i=bodyNumRan;i>0;i--){    
             let enmy  
             var _type=Math.round(Math.random(0,1))
@@ -70,13 +83,13 @@ cc.Class({
                 enmy=enemyHead.getComponent('Enemy');//接下来就可以调用 enemy 身上的脚本进行初始   
               
             }
-            let callback;
-            if (i==bodyNumRan){ 
-                callback=function(){
-                     this.node.destroy();
-                 };
-                 callback=callback.bind(this);               
-            }
+            let callback=null;
+            // if (i==bodyNumRan){ 
+            //     callback=function(){
+            //          this.node.destroy();
+            //      };
+            //      callback=callback.bind(this);               
+            // }
             enmy.init(_type,callback);//接下来就可以调用 enemy 身上的脚本进行初始  
             enmy.SetPosY((i-1)*enmy.node.height); 
            // body;
@@ -103,9 +116,6 @@ cc.Class({
      },
      onDestroy()
      {
-        cc.director.GlobalEvent.off(window.Global.score_add,this);
-         cc.director.GlobalEvent.emit(window.Flags.enemyNode_destroy, {
-         });
-            
+        cc.director.GlobalEvent.off(window.Flags.score_add,this);  
      }
 });
