@@ -12,49 +12,12 @@
       "position": []
     },
     "paths": {
-      "boss_body/boss_cavity": {
-        "props": {
-          "width": []
-        }
-      },
-      "boss_body/boss_cavity/boss_mouth": {
+      "boss_cavity/boss_mouth1": {
         "props": {
           "height": [
             {
               "frame": 0,
-              "value": 57
-            },
-            {
-              "frame": 0.6666666666666666,
-              "value": 62.6
-            },
-            {
-              "frame": 1.3333333333333333,
-              "value": 57
-            }
-          ]
-        }
-      },
-      "boss_body/boss_cavity/boss_cavity": {
-        "props": {
-          "scale": [
-            {
-              "frame": 0,
-              "value": {
-                "__type__": "cc.Vec2",
-                "x": 1,
-                "y": 1
-              }
-            }
-          ]
-        }
-      },
-      "boss_body/boss_cavity/boss_mouth2": {
-        "props": {
-          "height": [
-            {
-              "frame": 0,
-              "value": 52
+              "value": 56.5
             },
             {
               "frame": 0.6666666666666666,
@@ -62,18 +25,18 @@
             },
             {
               "frame": 1.3333333333333333,
-              "value": 52
+              "value": 56.5
             }
           ],
           "active": [
             {
               "frame": 0,
-              "value": false
+              "value": true
             }
           ]
         }
       },
-      "boss_body/boss_eyelid/eyelidMask": {
+      "boss_eyelid/eyelidMask": {
         "props": {
           "position": [
             {
@@ -100,7 +63,7 @@
           ]
         }
       },
-      "boss_body/boss_eyelid/boss_eyeball/boss_eye": {
+      "boss_eyelid/boss_eyeball/boss_eye": {
         "props": {
           "position": [
             {
@@ -123,60 +86,6 @@
                 0,
                 -33.1
               ]
-            }
-          ]
-        }
-      },
-      "boss_body/boss_cavity/boss_mouth1": {
-        "props": {
-          "active": [
-            {
-              "frame": 0,
-              "value": true
-            }
-          ],
-          "height": [
-            {
-              "frame": 0,
-              "value": 56.5
-            },
-            {
-              "frame": 0.6666666666666666,
-              "value": 63.8
-            },
-            {
-              "frame": 1.3333333333333333,
-              "value": 56.5
-            }
-          ]
-        }
-      },
-      "boss_body/boss_cavity/boss_cavity2": {
-        "props": {
-          "active": [
-            {
-              "frame": 0,
-              "value": false
-            }
-          ]
-        }
-      },
-      "boss_body/boss_cavity/boss_cavity1": {
-        "props": {
-          "active": [
-            {
-              "frame": 0,
-              "value": true
-            }
-          ]
-        }
-      },
-      "boss_body/boss_body2": {
-        "props": {
-          "active": [
-            {
-              "frame": 0,
-              "value": false
             }
           ]
         }
