@@ -1,0 +1,210 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "boss_3",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 1,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": "0",
+  "curveData": {
+    "props": {
+      "position": [],
+      "color": [
+        {
+          "frame": 0,
+          "value": {
+            "__type__": "cc.Color",
+            "r": 255,
+            "g": 255,
+            "b": 255,
+            "a": 255
+          }
+        },
+        {
+          "frame": 1,
+          "value": {
+            "__type__": "cc.Color",
+            "r": 255,
+            "g": 0,
+            "b": 0,
+            "a": 255
+          }
+        }
+      ]
+    },
+    "paths": {
+      "boss_cavity/boss_mouth2": {
+        "props": {
+          "height": [
+            {
+              "frame": 0,
+              "value": 52
+            },
+            {
+              "frame": 1,
+              "value": 81.3
+            }
+          ],
+          "active": [],
+          "color": [
+            {
+              "frame": 0,
+              "value": {
+                "__type__": "cc.Color",
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+              }
+            },
+            {
+              "frame": 1,
+              "value": {
+                "__type__": "cc.Color",
+                "r": 255,
+                "g": 0,
+                "b": 0,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "boss_eyelid/eyelidMask": {
+        "props": {
+          "position": [
+            {
+              "frame": 0,
+              "value": [
+                0,
+                87
+              ]
+            },
+            {
+              "frame": 0.1,
+              "value": [
+                0,
+                148.7
+              ]
+            },
+            {
+              "frame": 1,
+              "value": [
+                0,
+                -0.3
+              ]
+            }
+          ],
+          "color": [
+            {
+              "frame": 0,
+              "value": {
+                "__type__": "cc.Color",
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+              }
+            },
+            {
+              "frame": 1,
+              "value": {
+                "__type__": "cc.Color",
+                "r": 255,
+                "g": 0,
+                "b": 0,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "boss_eyelid/boss_eyeball/boss_eye": {
+        "props": {
+          "position": []
+        }
+      },
+      "boss_eyelid/boss_eyeball": {
+        "props": {
+          "scale": [
+            {
+              "frame": 0,
+              "value": {
+                "__type__": "cc.Vec2",
+                "x": 1,
+                "y": 1
+              }
+            },
+            {
+              "frame": 0.1,
+              "value": {
+                "__type__": "cc.Vec2",
+                "x": 1.21,
+                "y": 1.21
+              }
+            },
+            {
+              "frame": 1,
+              "value": {
+                "__type__": "cc.Vec2",
+                "x": 1,
+                "y": 1
+              }
+            }
+          ],
+          "position": [
+            {
+              "frame": 0,
+              "value": [
+                0,
+                -31.5
+              ]
+            },
+            {
+              "frame": 0.1,
+              "value": [
+                0,
+                -17.9
+              ]
+            },
+            {
+              "frame": 1,
+              "value": [
+                0,
+                -31.5
+              ]
+            }
+          ]
+        }
+      },
+      "boss_eyelid/boss_eyelid": {
+        "props": {
+          "color": [
+            {
+              "frame": 0,
+              "value": {
+                "__type__": "cc.Color",
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+              }
+            },
+            {
+              "frame": 1,
+              "value": {
+                "__type__": "cc.Color",
+                "r": 255,
+                "g": 0,
+                "b": 0,
+                "a": 255
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "events": []
+}
