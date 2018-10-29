@@ -17,7 +17,7 @@
         "__id__": 2
       },
       {
-        "__id__": 403
+        "__id__": 404
       }
     ],
     "_active": true,
@@ -44,8 +44,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.34762139845896683,
-      "y": 0.34762139845896683,
+      "x": 0.4779929577464789,
+      "y": 0.4779929577464789,
       "z": 1
     },
     "_quat": {
@@ -91,7 +91,7 @@
     "_level": 0,
     "_components": [
       {
-        "__id__": 402
+        "__id__": 403
       }
     ],
     "_prefab": null,
@@ -14551,6 +14551,9 @@
     "_components": [
       {
         "__id__": 401
+      },
+      {
+        "__id__": 402
       }
     ],
     "_prefab": null,
@@ -14724,7 +14727,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 156.8,
+      "width": 144.58999999999997,
       "height": 50
     },
     "_anchorPoint": {
@@ -14818,7 +14821,7 @@
     "_skewY": 0,
     "_zIndex": 0,
     "groupIndex": 0,
-    "_id": "6fxUdGlMJF+p2Uagl4t7oQ"
+    "_id": "b0pcGbj59GpYL67YVsBqdY"
   },
   {
     "__type__": "cc.Label",
@@ -14843,7 +14846,7 @@
     "_N$verticalAlign": 1,
     "_N$fontFamily": "Arial",
     "_N$overflow": 0,
-    "_id": "65qt8jG2ZDe5l+n15HZi0l"
+    "_id": "791JhZCZFDoIUU6BO2+BwE"
   },
   {
     "__type__": "cc.PrivateNode",
@@ -14904,7 +14907,7 @@
     "_skewY": 0,
     "_zIndex": 0,
     "groupIndex": 0,
-    "_id": "b9z1qPg39IGp/wUBjbBvXD"
+    "_id": "cdAY848PFAdrO+95uhZd38"
   },
   {
     "__type__": "cc.Label",
@@ -14929,7 +14932,7 @@
     "_N$verticalAlign": 1,
     "_N$fontFamily": "Arial",
     "_N$overflow": 0,
-    "_id": "94sMt7HQ9BnKiPruyFS2pL"
+    "_id": "8ewASFCJ9I+5MSjxZMEDBB"
   },
   {
     "__type__": "cc.PrivateNode",
@@ -14990,7 +14993,7 @@
     "_skewY": 0,
     "_zIndex": 0,
     "groupIndex": 0,
-    "_id": "01F5kzITJOlacdF1Ny/tX/"
+    "_id": "34Ii3n/oBIEqNNGpJ0AOio"
   },
   {
     "__type__": "cc.Label",
@@ -15015,7 +15018,7 @@
     "_N$verticalAlign": 1,
     "_N$fontFamily": "Arial",
     "_N$overflow": 0,
-    "_id": "48n4T5gFhP+5cOV3wgrFwR"
+    "_id": "58TPqzBehKRa9ZABpakfSa"
   },
   {
     "__type__": "cc.RichText",
@@ -15159,7 +15162,7 @@
     "_skewY": 0,
     "_zIndex": 0,
     "groupIndex": 0,
-    "_id": "dddx8zoZtH3rRdd5GbesTw"
+    "_id": "8eWcs7B2VCgJGe1Tp6gqa5"
   },
   {
     "__type__": "cc.Label",
@@ -15184,7 +15187,7 @@
     "_N$verticalAlign": 1,
     "_N$fontFamily": "Arial",
     "_N$overflow": 0,
-    "_id": "25BVDi3QhGA4L9Dy+dBjcy"
+    "_id": "51wLH6hFhDF4a1R+7SrWV7"
   },
   {
     "__type__": "cc.RichText",
@@ -15233,6 +15236,22 @@
     "_id": "cfLLZI9IVATLAMp2gm1iqo"
   },
   {
+    "__type__": "94c0flSiRBBLK9seutsOBfq",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 386
+    },
+    "_enabled": true,
+    "countLabel": {
+      "__id__": 396
+    },
+    "leftNumLabel": {
+      "__id__": 400
+    },
+    "_id": "caMdLtcW5I74yIV+kTIFVx"
+  },
+  {
     "__type__": "cc.Canvas",
     "_name": "",
     "_objFlags": 0,
@@ -15261,9 +15280,6 @@
     "_level": 0,
     "_components": [
       {
-        "__id__": 404
-      },
-      {
         "__id__": 405
       },
       {
@@ -15271,6 +15287,9 @@
       },
       {
         "__id__": 407
+      },
+      {
+        "__id__": 408
       }
     ],
     "_prefab": null,
@@ -15324,7 +15343,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 403
+      "__id__": 404
     },
     "_enabled": true,
     "scoreTxt": {
@@ -15339,7 +15358,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 403
+      "__id__": 404
     },
     "_enabled": true,
     "isFight": false,
@@ -15355,7 +15374,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 403
+      "__id__": 404
     },
     "_enabled": true,
     "isFight": false,
@@ -15371,9 +15390,12 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 403
+      "__id__": 404
     },
     "_enabled": true,
+    "bossShow": {
+      "__id__": 386
+    },
     "isFight": false,
     "enemyPrefab": {
       "__uuid__": "7ce2e20e-2e4a-43af-805f-cc81fadeffa2"

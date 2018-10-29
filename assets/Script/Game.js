@@ -64,6 +64,7 @@ cc.Class({
         var copy=this.copyList[this.copyIndex];
         copy.begin(this.gameRound);
         this.copyCurrent=copy;
+       
     },
     
      onDestroy(){

@@ -69,6 +69,7 @@ cc.Class({
                 
             }
           },this);
+          let totalHeight=0;
         for(var i=bodyNumRan;i>0;i--){    
             let enmy  
             var _type=Math.round(Math.random(0,1))
@@ -92,18 +93,24 @@ cc.Class({
             // }
             enmy.init(_type,callback);//接下来就可以调用 enemy 身上的脚本进行初始  
             enmy.SetPosY((i-1)*enmy.node.height); 
+            totalHeight=totalHeight+enmy.node.height;
            // body;
         } 
+        let innerWidth=window.windowSizeWidth;//window.innerWidth>900?window.innerWidth:900;
+        this.innerWidth=innerWidth+totalHeight;
+        console.error("this.pos_x========="+innerWidth+"========"+totalHeight); 
     },
 
    update (dt) {
         this.node.y=this.pos_y-this.y_offset*this.fsg;
-        if (this.pos_x>700){
+        if (this.pos_x>this.innerWidth){
             this.moveFlag=true  
-            this.fsg=this.fsg+1;     
-        }else if(this.pos_x<-700){
+            this.fsg=this.fsg+1;   
+            console.error("this.pos_x========="+this.pos_x);  
+        }else if(this.pos_x<-this.innerWidth){
             this.moveFlag=false 
-            this.fsg=this.fsg+1;    
+            this.fsg=this.fsg+1;   
+            console.error("-this.pos_x========="+this.pos_x); 
         };
         if(this.moveFlag==true){
             this.node.rotation = 90; 

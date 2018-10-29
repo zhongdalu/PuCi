@@ -11,5 +11,5 @@
 // module.export={
 //     debug=debug
 // }
-window.windowSize=cc.winSize.width;//推荐  原因  短
-window.windowSize=cc.winSize.height;
+window.windowSizeWidth=cc.winSize.width;//推荐  原因  短
+window.windowSizeHeight=cc.winSize.height;

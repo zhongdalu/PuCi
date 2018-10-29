@@ -20,6 +20,10 @@ cc.Class({
         //     type: cc.SpriteFrame, // optional, default is typeof default
         //     serializable: true,   // optional, default is true
         // },
+        bossShow:{
+            default:null,
+            type:cc.Node
+        },
         isFight: {
             default: false,
             type: cc.Boolean, // optional, default is typeof default
@@ -41,13 +45,14 @@ cc.Class({
           },this);
     },
     start(){
-      
+       
     },
     init:function(){
       
     },
 
     begin:function(round){
+        this.bossShow.active=true;
         this.enemyPool = new cc.NodePool();    
         let initCount = 5;
         for (let i = 0; i < initCount; ++i) {
@@ -131,9 +136,11 @@ cc.Class({
         this.createEnemyData=[];
         this.scoreNum=0;
         this.isFight=false;
+        this.bossShow.active=false;
     },
     onDestroy(){
         cc.director.GlobalEvent.off(window.Flags.enemyNode_destroy);
+       
     }
     // update (dt) {},
 });
