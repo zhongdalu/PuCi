@@ -44,8 +44,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.34762139845896683,
-      "y": 0.34762139845896683,
+      "x": 0.4779929577464789,
+      "y": 0.4779929577464789,
       "z": 1
     },
     "_quat": {
@@ -14724,7 +14724,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 156.8,
+      "width": 144.58999999999997,
       "height": 50
     },
     "_anchorPoint": {
@@ -14816,9 +14816,9 @@
     },
     "_skewX": 0,
     "_skewY": 0,
-    "_zIndex": 0,
+    "_zIndex": -32768,
     "groupIndex": 0,
-    "_id": "6fxUdGlMJF+p2Uagl4t7oQ"
+    "_id": "e1xlK0W8dGoaObyo/zx3cC"
   },
   {
     "__type__": "cc.Label",
@@ -14843,7 +14843,7 @@
     "_N$verticalAlign": 1,
     "_N$fontFamily": "Arial",
     "_N$overflow": 0,
-    "_id": "65qt8jG2ZDe5l+n15HZi0l"
+    "_id": "03YhtwZEZCIojc2wSgdJbn"
   },
   {
     "__type__": "cc.PrivateNode",
@@ -14902,9 +14902,9 @@
     },
     "_skewX": 0,
     "_skewY": 0,
-    "_zIndex": 0,
+    "_zIndex": -32768,
     "groupIndex": 0,
-    "_id": "b9z1qPg39IGp/wUBjbBvXD"
+    "_id": "73c6qmUYxHwI7qUhqV+57F"
   },
   {
     "__type__": "cc.Label",
@@ -14929,7 +14929,7 @@
     "_N$verticalAlign": 1,
     "_N$fontFamily": "Arial",
     "_N$overflow": 0,
-    "_id": "94sMt7HQ9BnKiPruyFS2pL"
+    "_id": "37xZH5Zw1E8Lds+4NNe5EQ"
   },
   {
     "__type__": "cc.PrivateNode",
@@ -14988,9 +14988,9 @@
     },
     "_skewX": 0,
     "_skewY": 0,
-    "_zIndex": 0,
+    "_zIndex": -32768,
     "groupIndex": 0,
-    "_id": "01F5kzITJOlacdF1Ny/tX/"
+    "_id": "75gT0DB2ZJqKdmbPbHIms1"
   },
   {
     "__type__": "cc.Label",
@@ -15015,7 +15015,7 @@
     "_N$verticalAlign": 1,
     "_N$fontFamily": "Arial",
     "_N$overflow": 0,
-    "_id": "48n4T5gFhP+5cOV3wgrFwR"
+    "_id": "8fu5+pF39ArbxyNHdLyzqT"
   },
   {
     "__type__": "cc.RichText",
@@ -15157,9 +15157,9 @@
     },
     "_skewX": 0,
     "_skewY": 0,
-    "_zIndex": 0,
+    "_zIndex": -32768,
     "groupIndex": 0,
-    "_id": "dddx8zoZtH3rRdd5GbesTw"
+    "_id": "d2Dolejm5IPIjQB5tFazTR"
   },
   {
     "__type__": "cc.Label",
@@ -15184,7 +15184,7 @@
     "_N$verticalAlign": 1,
     "_N$fontFamily": "Arial",
     "_N$overflow": 0,
-    "_id": "25BVDi3QhGA4L9Dy+dBjcy"
+    "_id": "5bGPW28P5LAbZb3PPUpVf3"
   },
   {
     "__type__": "cc.RichText",
